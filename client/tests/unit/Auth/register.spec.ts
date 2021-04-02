@@ -10,23 +10,23 @@ const username = process.env.TEST_USERNAME;
 describe('Register', () => {
     async function validRequest(user: any) {
         response = await registerRequest(user);
-        expect(response.status).toEqual(201);
-        expect(response.data.message).toEqual(MessageConstants.USER_CREATED);
+        expect(response.status).equal(201);
+        expect(response.data.message).equal(MessageConstants.USER_CREATED);
     }
 
     async function invalidRequest(user: any, valueExists?: string) {
         response = await registerRequest(user);
         if (valueExists) {
             if (valueExists === 'EMAIL') {
-                expect(response.status).toEqual(409);
-                expect(response.data.message).toEqual(MessageConstants.EMAIL_TAKEN);
+                expect(response.status).equal(409);
+                expect(response.data.message).equal(MessageConstants.EMAIL_TAKEN);
             } else {
-                expect(response.status).toEqual(409);
-                expect(response.data.message).toEqual(MessageConstants.USERNAME_TAKEN);
+                expect(response.status).equal(409);
+                expect(response.data.message).equal(MessageConstants.USERNAME_TAKEN);
             }
         } else {
-            expect(response.status).toEqual(400);
-            expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+            expect(response.status).equal(400);
+            expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
         }
     }
 

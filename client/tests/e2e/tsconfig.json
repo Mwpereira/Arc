@@ -1,4 +1,5 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "strict": true,
     "baseUrl": "../../node_modules",
@@ -7,6 +8,8 @@
     "types": ["cypress"],
   },
   "include": [
-    "**/*.ts"
+    "specs/**/*.spec.ts",
+    "specs/*/.spec.ts",
+    "**/*.spec.ts"
   ]
 }

@@ -11,20 +11,20 @@ const password = process.env.TEST_PASSWORD;
 describe('Login', () => {
     async function validRequest(user: any) {
         response = await loginRequest(user);
-        expect(response.status).toEqual(302);
-        expect(response.data.message).toEqual(MessageConstants.USER_AUTHORIZED);
+        expect(response.status).equal(302);
+        expect(response.data.message).equal(MessageConstants.USER_AUTHORIZED);
     }
 
     async function invalidRequest(user: any) {
         response = await loginRequest(user);
-        expect(response.status).toEqual(404);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_CREDENTIALS);
+        expect(response.status).equal(404);
+        expect(response.data.message).equal(MessageConstants.INVALID_CREDENTIALS);
     }
 
     async function invalidUserRequest(user: any) {
         response = await loginRequest(user);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     }
 
     test('valid credentials - email', async () => {

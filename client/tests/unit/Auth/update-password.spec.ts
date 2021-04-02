@@ -24,8 +24,8 @@ describe('Update User Password', () => {
             currentPassword: user.password,
             newPassword: faker.random.alphaNumeric(7),
         }, true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.PASSWORD_UPDATE_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.PASSWORD_UPDATE_SUCCESS);
     });
 
     test('invalid old password', async () => {
@@ -33,8 +33,8 @@ describe('Update User Password', () => {
             currentPassword: faker.random.alphaNumeric(7),
             newPassword: faker.random.alphaNumeric(7),
         }, true);
-        expect(response.status).toEqual(401);
-        expect(response.data.message).toEqual(MessageConstants.PASSWORD_UPDATE_UNAUTH);
+        expect(response.status).equal(401);
+        expect(response.data.message).equal(MessageConstants.PASSWORD_UPDATE_UNAUTH);
     });
 
     test('invalid new password', async () => {
@@ -42,8 +42,8 @@ describe('Update User Password', () => {
             currentPassword: user.password,
             newPassword: faker.random.alphaNumeric(3),
         }, true);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     });
 
     test('invalid new password is the same as old password', async () => {
@@ -51,24 +51,24 @@ describe('Update User Password', () => {
             currentPassword: user.password,
             newPassword: user.password,
         }, true);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.PASSWORD_UPDATE_SAME_PASSWORD);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.PASSWORD_UPDATE_SAME_PASSWORD);
     });
 
     test('invalid new password, missing newPassword field', async () => {
         response = await updatePassword({
             currentPassword: user.password,
         }, true);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     });
 
     test('invalid new password, missing currentPassword field', async () => {
         response = await updatePassword({
             newPassword: user.password,
         }, true);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     });
 
     test('update user password without accessToken', async () => {
@@ -76,7 +76,7 @@ describe('Update User Password', () => {
             currentPassword: user.password,
             newPassword: faker.random.alphaNumeric(7),
         }, false);
-        expect(response.status).toEqual(403);
-        expect(response.data.message).toEqual(MessageConstants.NO_PRINCIPAL_ID);
+        expect(response.status).equal(403);
+        expect(response.data.message).equal(MessageConstants.NO_PRINCIPAL_ID);
     });
 });

@@ -11,13 +11,13 @@ describe('Get Accounts', () => {
     test('get accounts successfully', async () => {
         response = await new AuthUtilities().login(true);
         response = await getAccounts(true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.ACCOUNT_GET_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.ACCOUNT_GET_SUCCESS);
     });
 
     test('get accounts without accessToken', async () => {
         response = await getAccounts(false);
-        expect(response.status).toEqual(403);
-        expect(response.data.message).toEqual(MessageConstants.NO_PRINCIPAL_ID);
+        expect(response.status).equal(403);
+        expect(response.data.message).equal(MessageConstants.NO_PRINCIPAL_ID);
     });
 });

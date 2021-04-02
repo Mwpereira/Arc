@@ -24,8 +24,8 @@ describe('Update User Credentials', () => {
             email: faker.internet.email(),
             username: faker.random.alphaNumeric(3),
         }, true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
     });
 
     test('successfully update user email', async () => {
@@ -33,8 +33,8 @@ describe('Update User Credentials', () => {
             email: faker.internet.email(),
             username: user.username,
         }, true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
     });
 
     test('successfully update user username', async () => {
@@ -42,8 +42,8 @@ describe('Update User Credentials', () => {
             email: user.email,
             username: faker.random.alphaNumeric(3),
         }, true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.CREDENTIALS_UPDATE_SUCCESS);
     });
 
     test('invalid email', async () => {
@@ -51,8 +51,8 @@ describe('Update User Credentials', () => {
             email: faker.random.alphaNumeric(3),
             username: user.username,
         }, true);
-        expect(response.status).toEqual(409);
-        expect(response.data.message).toEqual(MessageConstants.EMAIL_UPDATE_FAILED);
+        expect(response.status).equal(409);
+        expect(response.data.message).equal(MessageConstants.EMAIL_UPDATE_FAILED);
     });
 
     test('invalid username', async () => {
@@ -60,8 +60,8 @@ describe('Update User Credentials', () => {
             email: user.email,
             username: faker.random.alphaNumeric(2),
         }, true);
-        expect(response.status).toEqual(409);
-        expect(response.data.message).toEqual(MessageConstants.USERNAME_UPDATE_FAILED);
+        expect(response.status).equal(409);
+        expect(response.data.message).equal(MessageConstants.USERNAME_UPDATE_FAILED);
     });
 
     test('update user credentials without accessToken', async () => {
@@ -69,7 +69,7 @@ describe('Update User Credentials', () => {
             currentPassword: user.password,
             newPassword: faker.random.alphaNumeric(7),
         }, false);
-        expect(response.status).toEqual(403);
-        expect(response.data.message).toEqual(MessageConstants.NO_PRINCIPAL_ID);
+        expect(response.status).equal(403);
+        expect(response.data.message).equal(MessageConstants.NO_PRINCIPAL_ID);
     });
 });
