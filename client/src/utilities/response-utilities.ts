@@ -27,6 +27,10 @@ export const errorProcessor = async (
       Toasts.danger('Server Offline');
       break;
     }
+    case 409: {
+      Toasts.danger(response.data.message);
+      break;
+    }
     case 404: {
       Toasts.danger(response.data.message);
       break;
