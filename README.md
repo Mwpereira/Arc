@@ -5,8 +5,8 @@ A secure, advanced, and customizable password vault. Keep your accounts and data
 ## 📐 Project Setup
 
 ```
-git clone https://github.com/Mwpereira/Arc-2.0.git
-cd Arc-2.0
+git clone https://github.com/Mwpereira/Arc.git
+cd Arc
 ```
 
 ## 🖥 Developing
@@ -27,10 +27,10 @@ npm run serve
 
 ### Server
 
-Running node express server
+Running aws serverless locally
 
 ```
-npm run dev
+serverless offline
 ```
 
 ## 📚 Frameworks
