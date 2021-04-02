@@ -1,10 +1,10 @@
-import {clickOff, getByAutoId, login, logout, navigateToUserSettings, Selectors, startup} from "../../support/support";
-import * as faker from "faker";
+import {clickOff, getByAutoId, login, logout, navigateToUserSettings, Selectors, startup} from '../../support/support';
+import * as faker from 'faker';
 
-describe("Checks User Settings Form on User.vue", () => {
+describe('Checks User Settings Form on User.vue', () => {
     before(() => {
         startup();
-        cy.visit(`${Cypress.env("DOMAIN_LOCAL")}/login`);
+        cy.visit(`${Cypress.env('DOMAIN_LOCAL')}/login`);
         login();
         navigateToUserSettings();
     });
@@ -13,15 +13,15 @@ describe("Checks User Settings Form on User.vue", () => {
         logout();
     });
 
-    it("check field styling", () => {
-        getByAutoId(Selectors.FIELD_EMAIL).should("have.attr", "icon", "email");
-        getByAutoId(Selectors.FIELD_USERNAME).should("have.attr", "icon", "account");
-        getByAutoId(Selectors.FIELD_PASSWORD).should("have.attr", "icon", "lock");
-        getByAutoId(Selectors.FIELD_CONFIRM_PASSWORD).should("have.attr", "icon", "lock");
-        getByAutoId(Selectors.FIELD_NEW_PASSWORD).should("have.attr", "icon", "lock");
+    it('check field styling', () => {
+        getByAutoId(Selectors.FIELD_EMAIL).should('have.attr', 'icon', 'email');
+        getByAutoId(Selectors.FIELD_USERNAME).should('have.attr', 'icon', 'account');
+        getByAutoId(Selectors.FIELD_PASSWORD).should('have.attr', 'icon', 'lock');
+        getByAutoId(Selectors.FIELD_CONFIRM_PASSWORD).should('have.attr', 'icon', 'lock');
+        getByAutoId(Selectors.FIELD_NEW_PASSWORD).should('have.attr', 'icon', 'lock');
     });
 
-    it("verify credentials card", () => {
+    it('verify credentials card', () => {
         getByAutoId(Selectors.CARD_CREDENTIALS).should('be.visible');
         getByAutoId(Selectors.HEADER_CARD).should('contain', 'Credentials');
         getByAutoId(Selectors.INPUT_EMAIL)
@@ -32,35 +32,35 @@ describe("Checks User Settings Form on User.vue", () => {
         getByAutoId(Selectors.DELETE_BUTTON).should('contain', 'Delete User Permanently');
     });
 
-    it("verify invalid UI - credentials card", () => {
+    it('verify invalid UI - credentials card', () => {
         getByAutoId(Selectors.INPUT_EMAIL)
             .type(faker.name.firstName())
             .then(() => {
-                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', "This field must be a valid email");
+                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', 'This field must be a valid email');
             });
         getByAutoId(Selectors.INPUT_USERNAME)
-            .type("arc-!@#$%^&*()")
+            .type('arc-!@#$%^&*()')
             .then(() => {
                 cy.get(Selectors.INPUT_ERROR_LABEL)
-                    .should('contain', "Username can only contain alphanumeric characters");
+                    .should('contain', 'Username can only contain alphanumeric characters');
             });
         getByAutoId(Selectors.INPUT_USERNAME)
             .type('{selectall}{backspace}')
             .type(faker.random.alphaNumeric(2))
             .then(() => {
                 cy.get(Selectors.INPUT_ERROR_LABEL)
-                    .should('contain', "Username must be 3 or more characters long");
+                    .should('contain', 'Username must be 3 or more characters long');
             });
         getByAutoId(Selectors.INPUT_USERNAME)
             .type('{selectall}{backspace}')
             .type(faker.random.alphaNumeric(19))
             .then(() => {
                 cy.get(Selectors.INPUT_ERROR_LABEL)
-                    .should('contain', "Username must be 18 or less characters long");
+                    .should('contain', 'Username must be 18 or less characters long');
             });
     });
 
-    it("verify password card", () => {
+    it('verify password card', () => {
         getByAutoId(Selectors.CARD_PASSWORD).should('be.visible');
         getByAutoId(Selectors.HEADER_CARD).should('contain', 'Password');
         getByAutoId(Selectors.INPUT_PASSWORD)
@@ -72,23 +72,23 @@ describe("Checks User Settings Form on User.vue", () => {
         getByAutoId(Selectors.CONFIRM_BUTTON).eq(1).should('contain', 'Update Password');
     });
 
-    it("verify invalid UI - password card", () => {
+    it('verify invalid UI - password card', () => {
         getByAutoId(Selectors.INPUT_PASSWORD)
             .click()
             .then(() => {
                 getByAutoId(Selectors.INPUT_NEW_PASSWORD).click();
-                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', "Required Field");
+                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', 'Required Field');
             });
         getByAutoId(Selectors.INPUT_NEW_PASSWORD)
             .type(faker.internet.password().substring(0, 6))
             .then(() => {
                 cy.get(Selectors.INPUT_ERROR_LABEL)
-                    .should('contain', "Password must be 7 or more characters long");
+                    .should('contain', 'Password must be 7 or more characters long');
             });
         getByAutoId(Selectors.INPUT_CONFIRM_PASSWORD)
             .type(faker.internet.password())
             .then(() => {
-                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', "Passwords do not match");
+                cy.get(Selectors.INPUT_ERROR_LABEL).should('contain', 'Passwords do not match');
             });
     });
 });

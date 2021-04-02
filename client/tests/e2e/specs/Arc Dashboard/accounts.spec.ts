@@ -9,13 +9,13 @@ import {
     navigateToAccounts,
     selectAccount,
     Selectors,
-    startup
-} from "../../support/support";
+    startup,
+} from '../../support/support';
 
-describe("Checks Account Form on AccountForm.vue", () => {
+describe('Checks Account Form on AccountForm.vue', () => {
     beforeEach(() => {
         startup();
-        cy.visit(`${Cypress.env("DOMAIN_LOCAL")}/login`);
+        cy.visit(`${Cypress.env('DOMAIN_LOCAL')}/login`);
         login();
     });
 
@@ -23,7 +23,7 @@ describe("Checks Account Form on AccountForm.vue", () => {
         logout();
     });
 
-    it("select account", () => {
+    it('select account', () => {
         addAccount().then((id) => {
             navigateToAccounts();
 
@@ -37,22 +37,22 @@ describe("Checks Account Form on AccountForm.vue", () => {
         });
     });
 
-    it("delete account", () => {
+    it('delete account', () => {
         addAccount().then((id) => {
             // @ts-ignore
             selectAccount(id);
 
             cy.server();
-            cy.route("POST", `${Cypress.env("API_LOCAL")}/dev/user/accounts/delete`).as("delete");
+            cy.route('POST', `${Cypress.env('API_LOCAL')}/dev/user/accounts/delete`).as('delete');
 
             cy.get('.card-content > .level-item > button').eq(2).click().wait('@delete', {responseTimeout: 15000}).then((xhr) => {
                 expect(xhr.status).to.eq(200);
-                cy.get(Selectors.TOAST_SUCCESS).should('contain', "Account Deleted");
+                cy.get(Selectors.TOAST_SUCCESS).should('contain', 'Account Deleted');
             });
         });
     });
 
-    it("verify account", () => {
+    it('verify account', () => {
         addAccount().then((id) => {
             navigateToAccounts();
 
@@ -62,12 +62,12 @@ describe("Checks Account Form on AccountForm.vue", () => {
             expect(getByAutoId(id).find('.level-item > h2')).to.not.be.empty;
             getByAutoId(id).click();
 
-            getInputLabels(0).should('contain', "Account Name");
-            getInputLabels(1).should('contain', "Email");
-            getInputLabels(2).should('contain', "Username");
-            getInputLabels(3).should('contain', "Password");
-            getInputLabels(4).should('contain', "Category");
-            getInputLabels(5).should('contain', "Notes");
+            getInputLabels(0).should('contain', 'Account Name');
+            getInputLabels(1).should('contain', 'Email');
+            getInputLabels(2).should('contain', 'Username');
+            getInputLabels(3).should('contain', 'Password');
+            getInputLabels(4).should('contain', 'Category');
+            getInputLabels(5).should('contain', 'Notes');
 
             expect(getAccountDataLabels(0)).not.to.be.empty;
             expect(getAccountDataLabels(0)).not.to.be.empty;
