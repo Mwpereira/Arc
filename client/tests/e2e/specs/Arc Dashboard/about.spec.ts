@@ -1,9 +1,9 @@
-import {getByAutoId, login, logout, navigateToAbout, Selectors, startup} from "../../support/support";
+import {getByAutoId, login, logout, navigateToAbout, Selectors, startup} from '../../support/support';
 
-describe("Checks About Cards on About.vue", () => {
+describe('Checks About Cards on About.vue', () => {
     before(() => {
         startup();
-        cy.visit(`${Cypress.env("DOMAIN_LOCAL")}/login`);
+        cy.visit(`${Cypress.env('DOMAIN_LOCAL')}/login`);
         login();
         navigateToAbout();
     });
@@ -12,7 +12,7 @@ describe("Checks About Cards on About.vue", () => {
         logout();
     });
 
-    it("verify creator card", () => {
+    it('verify creator card', () => {
         getByAutoId(Selectors.CARD_CREATOR).should('be.visible');
         getByAutoId(Selectors.CARD_CREATOR).find(Selectors.HEADER_TEXT).should('contain', 'Creator');
         getByAutoId(Selectors.CARD_CREATOR).find(Selectors.TEXT_CARD).eq(0).should('contain', 'Developer: Michael Pereira');
@@ -29,7 +29,7 @@ describe("Checks About Cards on About.vue", () => {
         });
     });
 
-    it("verify Arc card", () => {
+    it('verify Arc card', () => {
         getByAutoId(Selectors.CARD_ARC).contains('Arc');
         getByAutoId(Selectors.CARD_ARC).find(Selectors.TEXT_CARD).eq(0).should('contain', 'Arc Version:');
         getByAutoId(Selectors.CARD_ARC).find(Selectors.TEXT_CARD).eq(1).should('contain', 'Front end Frameworks: Vue.js + Bulma');

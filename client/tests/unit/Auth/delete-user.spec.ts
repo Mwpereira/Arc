@@ -1,12 +1,12 @@
-import {AxiosResponse} from "axios";
-import {MessageConstants} from "../../utilities/message-constants";
-import AuthUtilities from "../utilities/auth-utilities";
+import {AxiosResponse} from 'axios';
+import {MessageConstants} from '../../utilities/message-constants';
+import AuthUtilities from '../utilities/auth-utilities';
 
 let response: AxiosResponse;
 let auth: AuthUtilities;
 let user;
 
-describe("Delete User", () => {
+describe('Delete User', () => {
     beforeEach(async () => {
         auth = new AuthUtilities();
         user = await auth.register();
@@ -17,35 +17,35 @@ describe("Delete User", () => {
         await auth.deleteUser(true);
     });
 
-    test("successfully delete user", async () => {
+    test('successfully delete user', async () => {
         response = await auth.deleteUser(true);
-        expect(response.status).toEqual(200);
-        expect(response.data.message).toEqual(MessageConstants.USER_DELETE_SUCCESS);
+        expect(response.status).equal(200);
+        expect(response.data.message).equal(MessageConstants.USER_DELETE_SUCCESS);
     });
 
-    test("invalid user object with missing email", async () => {
+    test('invalid user object with missing email', async () => {
         const deleteThisUser = {...user};
         delete deleteThisUser.password;
         delete deleteThisUser.email;
 
         response = await auth.deleteUser(true, deleteThisUser);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     });
 
-    test("invalid user object with missing username", async () => {
+    test('invalid user object with missing username', async () => {
         const deleteThisUser = {...user};
         delete deleteThisUser.password;
         delete deleteThisUser.username;
 
         response = await auth.deleteUser(true, deleteThisUser);
-        expect(response.status).toEqual(400);
-        expect(response.data.message).toEqual(MessageConstants.INVALID_REQUEST);
+        expect(response.status).equal(400);
+        expect(response.data.message).equal(MessageConstants.INVALID_REQUEST);
     });
 
-    test("delete user without accessToken", async () => {
+    test('delete user without accessToken', async () => {
         response = await auth.deleteUser(false);
-        expect(response.status).toEqual(403);
-        expect(response.data.message).toEqual(MessageConstants.NO_PRINCIPAL_ID);
+        expect(response.status).equal(403);
+        expect(response.data.message).equal(MessageConstants.NO_PRINCIPAL_ID);
     });
 });

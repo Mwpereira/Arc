@@ -1,13 +1,13 @@
-import * as faker from "faker";
-import axios, {AxiosResponse} from "axios";
+import * as faker from 'faker';
+import axios, {AxiosResponse} from 'axios';
 
 const url =
     process.env.VUE_APP_MODE === 'PRODUCTION'
         ? `https://${process.env.VUE_APP_API}`
         : `http://${process.env.VUE_APP_API_LOCAL}`;
 const config = {
-    headers: {Cookie: ""},
-    withCredentials: false
+    headers: {Cookie: ''},
+    withCredentials: false,
 };
 
 export function getId(response: AxiosResponse): string {
@@ -105,20 +105,20 @@ export function generateAccount() {
         email: faker.internet.email(),
         username: faker.random.alphaNumeric(3),
         password: faker.random.alphaNumeric(7),
-        category: "Tech",
+        category: 'Tech',
         notes: faker.random.alphaNumeric(125),
     };
 }
 
 export async function generateUpdatedAccountWithId() {
-    let id = getId(await addAccount(generateAccount(), true));
+    const id = getId(await addAccount(generateAccount(), true));
     return {
-        id: id,
+        id,
         accountName: faker.random.alphaNumeric(32),
         email: faker.internet.email(),
         username: faker.random.alphaNumeric(3),
         password: faker.random.alphaNumeric(7),
-        category: "Tech",
+        category: 'Tech',
         notes: faker.random.alphaNumeric(125),
     };
 }

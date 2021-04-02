@@ -6,17 +6,17 @@ import {
     navigateToUserSettings,
     register,
     Selectors,
-    startup
-} from "../../support/support";
-import * as faker from "faker";
-import {MessageConstants} from "../../../utilities/message-constants";
+    startup,
+} from '../../support/support';
+import * as faker from 'faker';
+import {MessageConstants} from '../../../utilities/message-constants';
 
 let user: { email: string; username: string; password: string; };
 
-describe("Checks User Settings Form on User.vue", () => {
+describe('Checks User Settings Form on User.vue', () => {
     beforeEach(() => {
         startup();
-        cy.visit(`${Cypress.env("DOMAIN_LOCAL")}/login`);
+        cy.visit(`${Cypress.env('DOMAIN_LOCAL')}/login`);
         user = register();
         login(user);
         navigateToUserSettings();
@@ -24,7 +24,7 @@ describe("Checks User Settings Form on User.vue", () => {
 
     function updateCredentials() {
         cy.server();
-        cy.route("POST", `${Cypress.env("API_LOCAL")}/dev/auth/credentials/update`).as("updateCredentials");
+        cy.route('POST', `${Cypress.env('API_LOCAL')}/dev/auth/credentials/update`).as('updateCredentials');
 
         getByAutoId(Selectors.CONFIRM_BUTTON).eq(0).click().wait('@updateCredentials', {responseTimeout: 15000}).then((xhr) => {
             expect(xhr.status).to.eq(200);
@@ -33,7 +33,7 @@ describe("Checks User Settings Form on User.vue", () => {
         });
     }
 
-    it("update email", () => {
+    it('update email', () => {
         user.email = faker.internet.email();
 
         getByAutoId(Selectors.INPUT_EMAIL).type(user.email);
@@ -48,8 +48,8 @@ describe("Checks User Settings Form on User.vue", () => {
         deleteUser();
     });
 
-    it("update username", () => {
-        user.username = "arc" + faker.random.alphaNumeric(9);
+    it('update username', () => {
+        user.username = 'arc' + faker.random.alphaNumeric(9);
 
         getByAutoId(Selectors.INPUT_USERNAME).type(user.username);
 
@@ -63,7 +63,7 @@ describe("Checks User Settings Form on User.vue", () => {
         deleteUser();
     });
 
-    it("update password", () => {
+    it('update password', () => {
         getByAutoId(Selectors.INPUT_PASSWORD).type(user.password);
 
         user.password = faker.internet.password();
@@ -72,7 +72,7 @@ describe("Checks User Settings Form on User.vue", () => {
         getByAutoId(Selectors.INPUT_CONFIRM_PASSWORD).type(user.password);
 
         cy.server();
-        cy.route("POST", `${Cypress.env("API_LOCAL")}/dev/auth/password/update`).as("updatePassword");
+        cy.route('POST', `${Cypress.env('API_LOCAL')}/dev/auth/password/update`).as('updatePassword');
 
         getByAutoId(Selectors.CONFIRM_BUTTON).eq(1).click().wait('@updatePassword', {responseTimeout: 15000}).then((xhr) => {
             expect(xhr.status).to.eq(200);
