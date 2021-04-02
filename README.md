@@ -72,7 +72,7 @@ npm run test:unit
 
 ### Gallery
 
-<img src="/dist/screenshots/home.PNG" width="650x50">
-<img src="/dist/screenshots/login.PNG" width="650x50">
-<img src="/dist/screenshots/dashboard.PNG" width="650x50">
-<img src="/dist/screenshots/accounts.PNG" width="650x50">
+<img src="/dist/screenshots/home.PNG" width="750x50">
+<img src="/dist/screenshots/login.PNG" width="750x50">
+<img src="/dist/screenshots/dashboard.PNG" width="750x50">
+<img src="/dist/screenshots/accounts.PNG" width="750x50">
