@@ -1,0 +1,133 @@
+verifyToken:
+  handler: 'src/handlers/jwt-handler.verifyToken'
+  description: "Verifies JWT"
+
+register:
+  handler: 'src/handlers/auth-handler.register'
+  description: "Creates User"
+  events:
+    - http:
+        method: 'post'
+        path: 'auth/register'
+        cors: true
+
+login:
+  handler: 'src/handlers/auth-handler.login'
+  description: "Authenticates User"
+  events:
+    - http:
+        method: 'post'
+        path: 'auth/login'
+        cors: true
+
+refresh:
+  handler: 'src/handlers/jwt-handler.refresh'
+  description: "Refreshes JWT Token"
+  events:
+    - http:
+        method: 'get'
+        path: 'auth/refresh'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+getAccounts:
+  handler: 'src/handlers/user-handler.getAccounts'
+  description: "Gets User's Accounts"
+  events:
+    - http:
+        method: 'get'
+        path: 'user/accounts'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+addAccount:
+  handler: 'src/handlers/user-handler.addAccount'
+  description: "Add Account"
+  events:
+    - http:
+        method: 'post'
+        path: 'user/accounts/add'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+deleteAccount:
+  handler: 'src/handlers/user-handler.deleteAccount'
+  description: "Delete Account"
+  events:
+    - http:
+        method: 'post'
+        path: 'user/accounts/delete'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+updateAccount:
+  handler: 'src/handlers/user-handler.updateAccount'
+  description: "Update Account"
+  events:
+    - http:
+        method: 'post'
+        path: 'user/accounts/update'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+updateCredentials:
+  handler: 'src/handlers/auth-handler.updateCredentials'
+  description: "Updates User's Username"
+  events:
+    - http:
+        method: 'post'
+        path: 'auth/credentials/update'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+updatePassword:
+  handler: 'src/handlers/auth-handler.updatePassword'
+  description: "Updates User's Password"
+  events:
+    - http:
+        method: 'post'
+        path: 'auth/password/update'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie
+
+deleteUser:
+  handler: 'src/handlers/auth-handler.deleteUser'
+  description: "Deletes User"
+  events:
+    - http:
+        method: 'post'
+        path: 'auth/user/delete'
+        cors: true
+        authorizer:
+          name: verifyToken
+          type: request
+          resultTtlInSeconds: 10
+          indentitySource: method.request.header.Cookie

@@ -1,0 +1,75 @@
+name: Github Actions
+
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  e2e-tests:
+    name: Running E2E Tests
+    runs-on: ubuntu-latest
+    env:
+      VUE_APP_MODE: ${{ secrets.VUE_APP_MODE }}
+      MODE: ${{ secrets.TEST_PASSWORD }}
+      DOMAIN: ${{ secrets.TEST_PASSWORD }}
+      DOMAIN_LOCAL: ${{ secrets.TEST_PASSWORD }}
+      API_LOCAL: ${{ secrets.TEST_PASSWORD }}
+      TEST_EMAIL: ${{ secrets.TEST_PASSWORD }}
+      TEST_USERNAME: ${{ secrets.TEST_PASSWORD }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+      REGION: ${{ secrets.REGION }}
+      SERVER_MODE: ${{ secrets.SERVER_MODE }}
+      ARC_DOMAIN_LOCAL: ${{ secrets.ARC_DOMAIN_LOCAL }}
+      APP_SECRET: ${{ secrets.APP_SECRET }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing Client Dependencies
+        run: cd client && npm install
+      - name: Installing Serverless Dependencies
+        run: cd serverless && npm install serverless && npm install
+      - name: Starting Local Server & E2E Tests
+        run: cd client && npm run ci:e2e
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Cypress-video ${{ matrix.affected-projects }}
+          path: client/tests/e2e/videos/**/*
+          retention-days: 10
+
+  api-tests:
+    name: Running API Tests
+    runs-on: ubuntu-latest
+    env:
+      MODE: ${{ secrets.TEST_PASSWORD }}
+      DOMAIN: ${{ secrets.TEST_PASSWORD }}
+      DOMAIN_LOCAL: ${{ secrets.TEST_PASSWORD }}
+      API_LOCAL: ${{ secrets.TEST_PASSWORD }}
+      TEST_EMAIL: ${{ secrets.TEST_PASSWORD }}
+      TEST_USERNAME: ${{ secrets.TEST_PASSWORD }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+      REGION: ${{ secrets.REGION }}
+      SERVER_MODE: ${{ secrets.SERVER_MODE }}
+      ARC_DOMAIN: ${{ secrets.ARC_DOMAIN }}
+      ARC_DOMAIN_LOCAL: ${{ secrets.ARC_DOMAIN_LOCAL }}
+      APP_SECRET: ${{ secrets.APP_SECRET }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing Client Dependencies
+        run: cd client && npm install
+      - name: Installing Serverless Dependencies
+        run: cd serverless && npm install serverless && npm install
+      - name: Starting Local Server & Unit Tests
+        run: cd client && npm run ci:unit

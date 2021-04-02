@@ -1,0 +1,126 @@
+@import 'theme-colors';
+
+/*
+* === BODY, APP BACKGROUND ETC. ===
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: white !important;
+}
+
+html {
+  height: 100vh;
+  background-image: url('../../assets/img/background.webp');
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.is-dark {
+  background-color: #666;
+}
+
+.columns {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.column {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.label {
+  color: white;
+}
+
+.content h2 {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.content h3 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.card {
+  color: white;
+  background: #192d52;
+}
+
+.card-fixed{
+  width: 400px;
+}
+
+.card-info, .card-account, .card-settings{
+  min-width: 375px;
+}
+
+.card-settings{
+  min-width: 360px;
+}
+
+.card-image img {
+  width: 175px;
+  height: 85px;
+  margin-bottom: 17.5px;
+}
+
+.textarea{
+  min-height: 6em !important;
+  height: 100px !important;
+}
+
+.toast {
+  height: 60px;
+  align-items: center;
+}
+
+.notices .toast {
+  border-radius: 0.25rem;
+}
+
+.content label {
+  margin-top: 15px;
+}
+
+.content button {
+  margin-top: 10px;
+}
+
+.content .b-checkbox.checkbox {
+  padding: 0px;
+  margin: 15px 0px 10px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    background: rgba(25, 45, 82, 0.9);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .card {
+    width: auto;
+    margin: 2.5vw;
+    padding: 0px;
+  }
+}
+
+.app-background {
+  background-color: var(--app-background-color);
+}
+
+.dynamic-text {
+  color: var(--dynamic-h2-color);
+}
+
+.dynamic-title {
+  color: var(--dynamic-title-color);
+}
+
+.dynamic-subtitle {
+  color: var(--dynamic-subtitle-color);
+  padding-top: 10px;
+}

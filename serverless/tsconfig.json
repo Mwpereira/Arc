@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "es2017"
+      ],
+      "removeComments": true,
+      "moduleResolution": "node",
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "sourceMap": true,
+      "target": "es2017",
+      "outDir": "./dist",
+      "baseUrl": "./src",
+      "allowSyntheticDefaultImports": true
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules/**/*",
+      ".serverless/**/*",
+      ".webpack/**/*"
+    ]
+}

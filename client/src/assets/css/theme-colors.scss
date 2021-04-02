@@ -1,0 +1,76 @@
+// Custom styling
+$primary: #0093ee;
+$content-heading-color: white;
+
+// Buttons
+.button.is-warning {
+  background-color: #f0c536 !important;
+}
+
+.button.is-warning:hover {
+  background-color: #e2ba31 !important;
+}
+
+.button {
+  color: white !important;
+}
+
+// Nav Bar
+.navbar-menu a {
+  color: white;
+}
+
+.mdi {
+  margin-right: 10px !important;
+}
+
+a.navbar-item:hover, .navbar-link:hover {
+  background-color: #3c5688 !important;
+  color: white !important;
+}
+
+@media screen and (min-width: 1024px) {
+  a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active {
+    background-color: #3c5688 !important;
+    color: white !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-dropdown, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active,
+  .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: #192d52 !important;
+    color: white !important;
+  }
+}
+
+// Accounts Menu
+.menu-list a:hover, .menu-list a.is-active {
+  background-color: #3c5688 !important;
+}
+
+ul li a span {
+  color: white;
+}
+
+li {
+  text-align: left;
+}
+
+li span {
+  margin-left: 7.5px;
+}
+
+// Text area count
+.counter {
+  color: white !important;
+}
+
+// Toasts
+.notices .toast.is-danger {
+  background: #dd0303;
+}
+
+// Import Bulma's core
+@import '../../../node_modules/bulma/bulma.sass';
