@@ -9,7 +9,7 @@
           <p>Arc Version: <b>1.0.0</b></p>
           <p>Front end Frameworks: Vue.js + Bulma</p>
           <p>Back end Server: AWS Serverless</p>
-          <p>Found a bug? <a href="https://github.com/Mwpereira/Arc-2.0/issues/" rel="noopener"
+          <p>Found a bug? <a href="https://github.com/mwpereira/arc/issues/" rel="noopener"
                              target="_blank" auto-id="href-github-issues">Post here</a></p>
         </div>
       </div>
