@@ -1,9 +1,9 @@
 {
-  "name": "Arc",
+  "name": "arc_client",
   "version": "1.0.0",
-  "private": true,
   "description": "Password Manager program using Vue + Bulma + TypeScript + Electron",
   "author": "Michael W. Pereira",
+  "repository": "https://github.com/mwpereira/arc",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

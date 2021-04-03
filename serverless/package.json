@@ -1,11 +1,10 @@
 {
-  "name": "arc-2.0_serverless",
+  "name": "arc_serverless",
   "version": "1.0.0",
   "description": "Serverless webpack using Typescript",
   "author": "Michael W. Pereira",
-  "license": "ISC",
-  "private": true,
   "moduleResolution": "module",
+  "repository": "https://github.com/mwpereira/arc",
   "scripts": {
     "start": "serverless offline",
     "start:ci:e2e": "serverless offline --httpPort 3000",
@@ -45,5 +44,6 @@
     "validator": "^13.5.1",
     "webpack": "^4.44.2",
     "webpack-node-externals": "^2.5.2"
-  }
+  },
+  "license": "ISC"
 }
