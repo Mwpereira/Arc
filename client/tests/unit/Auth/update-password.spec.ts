@@ -6,7 +6,7 @@ import * as faker from 'faker';
 
 let response: AxiosResponse;
 let auth: AuthUtilities;
-let user;
+let user: any;
 
 describe('Update User Password', () => {
     beforeEach(async () => {

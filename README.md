@@ -7,6 +7,7 @@ A secure, advanced, and customizable password vault. Keep your accounts and data
 ```
 git clone https://github.com/Mwpereira/Arc.git
 cd Arc
+npm install
 ```
 
 ## 🖥 Developing
@@ -35,7 +36,7 @@ serverless offline
 
 ## 📚 Frameworks
 
--   _Vue.js_ - for building user interfaces and connecting Javascript code
+-   _Vue.js_ - for building user interfaces and connecting Javascript/Typescript code
 -   _Electron_ - for the development of cross-platform desktop GUI applications
 -   _Bulma_ - for UI components and styling
 

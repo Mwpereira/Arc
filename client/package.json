@@ -1,7 +1,6 @@
 {
   "name": "Arc",
   "version": "1.0.0",
-  "private": true,
   "description": "Password Manager program using Vue + Bulma + TypeScript + Electron",
   "author": "Michael W. Pereira",
   "scripts": {
@@ -56,6 +55,7 @@
     "babel-loader": "^8.2.2",
     "electron": "^11.3.0",
     "electron-devtools-installer": "^3.1.1",
+    "electron-icon-builder": "^2.0.1",
     "faker": "^5.4.0",
     "node-sass": "^5.0.0",
     "prettier": "2.2.1",

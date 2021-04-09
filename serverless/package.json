@@ -4,7 +4,6 @@
   "description": "Serverless webpack using Typescript",
   "author": "Michael W. Pereira",
   "license": "ISC",
-  "private": true,
   "moduleResolution": "module",
   "scripts": {
     "start": "serverless offline",

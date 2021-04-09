@@ -4,7 +4,7 @@ import AuthUtilities from '../utilities/auth-utilities';
 
 let response: AxiosResponse;
 let auth: AuthUtilities;
-let user;
+let user: any;
 
 describe('Delete User', () => {
     beforeEach(async () => {
@@ -24,7 +24,7 @@ describe('Delete User', () => {
     });
 
     test('invalid user object with missing email', async () => {
-        const deleteThisUser = {...user};
+        const deleteThisUser: any = {...user};
         delete deleteThisUser.password;
         delete deleteThisUser.email;
 
@@ -34,7 +34,7 @@ describe('Delete User', () => {
     });
 
     test('invalid user object with missing username', async () => {
-        const deleteThisUser = {...user};
+        const deleteThisUser: any = {...user};
         delete deleteThisUser.password;
         delete deleteThisUser.username;
 
