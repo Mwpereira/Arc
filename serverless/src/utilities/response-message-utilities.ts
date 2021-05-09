@@ -19,14 +19,11 @@ export class Result {
   }
 
   response(): Response {
-    const response: Response = {
+    return  {
       statusCode: this.statusCode,
       body: JSON.stringify(this.data),
       headers: this.headers,
     };
-    console.log(response);
-
-    return response;
   }
 
   setCookie(result: Result, accessToken: string, refreshToken: boolean) {
@@ -67,15 +64,12 @@ export default class MessageUtil {
     refreshToken: boolean,
     data?: object
   ): Response {
-    let result = new Result(statusCode, message, data);
-    result = result.setCookie(result, accessToken, refreshToken);
+    const result = new Result(statusCode, message, data);
 
-    return result.response();
+    return result.setCookie(result, accessToken, refreshToken).response();
   }
 
   static error(statusCode: number, message: string) {
-    const result = new Result(statusCode, message);
-
-    return result.response();
+    return new Result(statusCode, message).response();
   }
 }
