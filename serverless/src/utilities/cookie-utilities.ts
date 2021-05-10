@@ -20,7 +20,7 @@ export default class CookieUtilities {
    *
    * @return JWT Cookie
    */
-  generateCookie() {
+  generateCookie(): Buffer {
     return cookie.serialize('accessToken', this.cookie, {
       expires: this.expires,
       path: this.path,

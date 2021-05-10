@@ -26,7 +26,7 @@ export class Result {
     };
   }
 
-  setCookie(result: Result, accessToken: string, refreshToken: boolean) {
+  setCookie(result: Result, accessToken: string, refreshToken: boolean): Result {
     let minute: number = 60;
     if (!refreshToken) {
       minute = 15;
@@ -69,7 +69,7 @@ export default class MessageUtil {
     return result.setCookie(result, accessToken, refreshToken).response();
   }
 
-  static error(statusCode: number, message: string) {
+  static error(statusCode: number, message: string): Response {
     return new Result(statusCode, message).response();
   }
 }
