@@ -1,4 +1,5 @@
 import * as jwt from 'jsonwebtoken';
+import {PolicyDocument} from 'aws-lambda';
 
 /**
  * Helper methods for JWT
@@ -64,7 +65,7 @@ export default class JwtUtilities {
    * @param token
    * @return decoded token
    */
-  static getDecodedToken(token: any): any {
+  static getDecodedToken(token: string): string | object {
     return jwt.verify(token, process.env.APP_SECRET);
   }
 
@@ -73,7 +74,7 @@ export default class JwtUtilities {
    *
    * @param token
    */
-  static verify(token: any): string | object {
+  static verify(token: string): string | object {
     return jwt.verify(token, process.env.APP_SECRET);
   }
 
@@ -85,7 +86,7 @@ export default class JwtUtilities {
    * @param methodArn
    * @return jwt response
    */
-  static generatePolicyResponse(principalId, effect, methodArn) {
+  static generatePolicyResponse(principalId, effect, methodArn): object {
     const policyDocument = this.generatePolicyDocument(effect, methodArn);
 
     return {
@@ -101,7 +102,7 @@ export default class JwtUtilities {
    * @param methodArn
    * @return jwt policy document
    */
-  private static generatePolicyDocument(effect, methodArn) {
+  private static generatePolicyDocument(effect, methodArn): PolicyDocument | null {
     if (!effect || !methodArn) {
       return null;
     }

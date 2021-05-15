@@ -11,6 +11,7 @@ import {UpdatePasswordRequest} from '../interfaces/update-password-request';
 import {UpdateCredentialsRequest} from '../interfaces/update-credentials-request';
 import {UpdateLastloginRequest} from '../interfaces/update-lastlogin-request';
 import {LoginRequest} from '../interfaces/login-request';
+import {APIGatewayEvent} from "aws-lambda";
 
 export default class RequestMapperUtilities {
     /**
@@ -18,7 +19,7 @@ export default class RequestMapperUtilities {
      *
      * @param event
      */
-    static getUser(event): any {
+    static getUser(event: APIGatewayEvent): object {
         return JSON.parse(event.body).user;
     }
 

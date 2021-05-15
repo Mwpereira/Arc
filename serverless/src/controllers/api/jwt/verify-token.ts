@@ -4,7 +4,7 @@ import { MessageConstants } from '../../../constants/message-constants';
 import CookieUtilities from '../../../utilities/cookie-utilities';
 
 /**
- * Refresh JWT Token
+ * Verify JWT Token
  */
 export default class VerifyToken {
   static async verify(event: any): Promise<any> {

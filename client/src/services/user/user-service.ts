@@ -19,7 +19,7 @@ export default class UserService {
       });
   }
 
-  public static async addAccount(account: any): Promise<AxiosResponse> {
+  public static async addAccount(account: object): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/user/accounts/add`, JSON.stringify(account))
       .then((response) => {
@@ -30,7 +30,7 @@ export default class UserService {
       });
   }
 
-  public static async deleteAccount(account: any): Promise<AxiosResponse> {
+  public static async deleteAccount(account: object): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/user/accounts/delete`, JSON.stringify(account))
       .then((response: AxiosResponse) => {
@@ -41,7 +41,7 @@ export default class UserService {
       });
   }
 
-  public static async updateAccount(account: any): Promise<AxiosResponse> {
+  public static async updateAccount(account: object): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/user/accounts/update`, JSON.stringify(account))
       .then((response: AxiosResponse) => {
@@ -53,7 +53,7 @@ export default class UserService {
   }
 
   public static async updateCredentials(
-    credentials: any,
+    credentials: object,
   ): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/auth/credentials/update`, JSON.stringify(credentials))
@@ -65,7 +65,7 @@ export default class UserService {
       });
   }
 
-  public static async updatePassword(passwords: any): Promise<AxiosResponse> {
+  public static async updatePassword(passwords: object): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/auth/password/update`, JSON.stringify(passwords))
       .then((response: AxiosResponse) => {
@@ -76,7 +76,7 @@ export default class UserService {
       });
   }
 
-  public static async deleteUser(user: any): Promise<AxiosResponse> {
+  public static async deleteUser(user: object): Promise<AxiosResponse> {
     return await axios
       .post(`${this.url}/auth/user/delete`, JSON.stringify(user))
       .then((response: AxiosResponse) => {

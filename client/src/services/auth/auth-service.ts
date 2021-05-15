@@ -9,7 +9,7 @@ axios.defaults.withCredentials = true;
  */
 export default class AuthService {
 
-  public static async register(user: any): Promise<AxiosResponse> {
+  public static async register(user: object): Promise<AxiosResponse> {
     return axios
       .post(`${this.url}/auth/register`, JSON.stringify({ user }))
       .then((response: AxiosResponse) => {
@@ -20,7 +20,7 @@ export default class AuthService {
       });
   }
 
-  public static async login(user: any): Promise<AxiosResponse> {
+  public static async login(user: object): Promise<AxiosResponse> {
     return axios
       .post(`${this.url}/auth/login`, JSON.stringify({ user }))
       .then((response: AxiosResponse) => {

@@ -127,7 +127,7 @@ export default class AuthTable {
      * @param _email
      * @return update user status
      */
-    static updateEmail(_id: string, _email: any): Promise<boolean> {
+    static updateEmail(_id: string, _email: string): Promise<boolean> {
         const mappedObject = RequestMapperUtilities.mapUpdateEmailRequest(
             _id,
             _email
@@ -157,7 +157,7 @@ export default class AuthTable {
      * @param _username
      * @return update user status
      */
-    static updateUsername(_id: string, _username: any): Promise<boolean> {
+    static updateUsername(_id: string, _username: string): Promise<boolean> {
         const mappedObject = RequestMapperUtilities.mapUpdateUsernameRequest(
             _id,
             _username
@@ -187,7 +187,7 @@ export default class AuthTable {
      * @param _password
      * @return update user status
      */
-    static async updatePassword(_id: string, _password: any): Promise<string> {
+    static async updatePassword(_id: string, _password: string): Promise<string> {
         const mappedObject = await RequestMapperUtilities.mapUpdatePasswordRequest(
             _id,
             _password

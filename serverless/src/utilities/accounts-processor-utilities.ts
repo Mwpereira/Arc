@@ -45,8 +45,8 @@ export default class AccountsTable {
    */
   static async addAccount(
     _id: string,
-    _accounts: any,
-    _account: any
+    _accounts: object,
+    _account: object
   ): Promise<string> {
     const mappedObject = await RequestMapperUtilities.mapAddAccountRequest(
       _id,
@@ -55,7 +55,6 @@ export default class AccountsTable {
     if (_accounts) {
       _accounts[`${mappedObject.id}`] = mappedObject;
     } else {
-      // @ts-ignore
       _accounts = { [mappedObject.id]: mappedObject };
     }
     return arcTable
@@ -79,7 +78,7 @@ export default class AccountsTable {
    * @param _accounts
    * @return update account status
    */
-  static async updateAccount(_id: string, _accounts: any): Promise<boolean> {
+  static async updateAccount(_id: string, _accounts: object): Promise<boolean> {
     const mappedObject = await RequestMapperUtilities.mapUpdateAccountRequest(
       _id,
       _accounts

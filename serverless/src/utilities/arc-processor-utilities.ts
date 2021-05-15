@@ -6,7 +6,6 @@ const arcTable: any = dynamoDB.model('arc', ArcSchema);
 /**
  * Provides access to the Arc DynamoDB Table
  */
-
 export default class ArcTable {
   /**
    * Create User Account
