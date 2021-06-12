@@ -5,7 +5,7 @@
         <div class="content">
           <h2 class="is-size-3 has-text-centered" auto-id="header-card">Creator</h2>
         </div>
-        <div class="content has-text-centered">
+        <div class="content has-text-centered is-size-5">
           <p>Developer: Michael Pereira</p>
           <p>Education: Ryerson University</p>
           <p>Github: <a href="https://github.com/Mwpereira" rel="noopener" target="_blank" auto-id="href-github">Visit</a></p>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .card {
-  height: 275px;
-  min-width: 325px;
+  min-width: 400px;
+  height: 300px;
 }
 </style>

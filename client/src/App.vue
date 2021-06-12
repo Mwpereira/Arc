@@ -34,4 +34,10 @@ body {
 h2 {
     font-size: 32px;
 }
+
+@media screen and (max-width: 1024px) {
+  #leftPanel{
+    visibility: hidden;
+  }
+}
 </style>

@@ -5,8 +5,8 @@
         <div class="content">
           <h2 class="is-size-3 has-text-centered" auto-id="header-card">Arc</h2>
         </div>
-        <div class="content has-text-centered">
-          <p>Arc Version: <b>1.0.0</b></p>
+        <div class="content has-text-centered is-size-5">
+          <p>Arc Version: v1.0.0</p>
           <p>Front end Frameworks: Vue.js + Bulma</p>
           <p>Back end Server: AWS Serverless</p>
           <p>Found a bug? <a href="https://github.com/mwpereira/arc/issues/" rel="noopener"
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .card {
-  height: 275px;
-  min-width: 325px;
+  height: 300px;
+  min-width: 400px;
 }
 </style>

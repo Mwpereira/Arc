@@ -4,7 +4,7 @@
       {{ editAccount === true ? 'Edit Account' : 'Add Account' }}
     </h2>
     <div class="columns">
-      <div class="column is-6-fullhd is-8-widescreen is-9-desktop">
+      <div class="column" id="accountForm">
         <div class="card m-5">
           <div class="card-content">
             <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
@@ -173,5 +173,9 @@ export default {
 
 h2 {
   color: white;
+}
+
+#accountForm{
+  max-width: 800px;
 }
 </style>

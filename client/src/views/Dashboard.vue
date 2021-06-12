@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="columns is-mobile">
-      <div class="column is-2">
-        <LeftPanel/>
+      <div class="column is-2" id="dashboardLeftPanel">
+        <LeftPanel />
       </div>
-      <div class="column is-10">
-        <Panel/>
+      <div class="column is-10" id="dashboardPanel">
+        <Panel />
       </div>
     </div>
   </div>
@@ -32,6 +32,24 @@ export default {
         }
       });
     }
+
+    // const leftPanel = document.getElementById('dashboardLeftPanel');
+    // const panel = document.getElementById('dashboardPanel');
+    //
+    // const resolutionChange = () => {
+    //   console.log("JAMMINGs")
+    //   window.addEventListener('resize', () => {
+    //     if (window.innerWidth <= 1024){
+    //       leftPanel.classList.add('is-hidden');
+    //       panel.classList.add('is-12');
+    //     } else {
+    //       leftPanel.classList.remove('is-hidden');
+    //       panel.classList.remove('is-12');
+    //       panel.classList.add('is-10');
+    //     }
+    //   });
+    // };
+    // resolutionChange();
   },
 }
 </script>

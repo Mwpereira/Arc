@@ -2,7 +2,7 @@
   <section>
     <h2 auto-id="header-panel" class="is-size-3 has-text-left mb-5">Account</h2>
     <div class="columns">
-      <div class="column is-6-fullhd is-8-widescreen is-9-desktop">
+      <div class="column" id="account">
         <div class="card m-5">
           <div class="card-content">
             <b-field auto-id="field-account-name" class="mb-5" label="Account Name">
@@ -91,5 +91,9 @@ div.card-content > div.field > div.field > label {
 
 #notes{
   word-break: break-all;
+}
+
+#account{
+  max-width: 800px;
 }
 </style>
