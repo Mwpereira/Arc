@@ -107,6 +107,7 @@ updateCredentials:
 updatePassword:
   handler: 'src/handlers/auth-handler.updatePassword'
   description: "Updates User's Password"
+  timeout: 20
   events:
     - http:
         method: 'post'
@@ -115,7 +116,7 @@ updatePassword:
         authorizer:
           name: verifyToken
           type: request
-          resultTtlInSeconds: 10
+          resultTtlInSeconds: 20
           indentitySource: method.request.header.Cookie
 
 deleteUser:

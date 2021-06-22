@@ -27,6 +27,6 @@ Before running `test:e2e`, the `serve` script for the client and the `start` scr
 
 Create a `jest.config.js` file and add the following:
 
-_"TEST_EMAIL": "",
-"TEST_USERNAME": "",
+_"TEST_EMAIL": "",  
+"TEST_USERNAME": "",  
 "TEST_PASSWORD": ""_
