@@ -11,7 +11,7 @@ import {UpdatePasswordRequest} from '../interfaces/update-password-request';
 import {UpdateCredentialsRequest} from '../interfaces/update-credentials-request';
 import {UpdateLastloginRequest} from '../interfaces/update-lastlogin-request';
 import {LoginRequest} from '../interfaces/login-request';
-import {APIGatewayEvent} from "aws-lambda";
+import {APIGatewayEvent} from 'aws-lambda';
 
 export default class RequestMapperUtilities {
     /**

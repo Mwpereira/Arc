@@ -1,15 +1,13 @@
 import { Handler } from 'aws-lambda';
-import Register from '../controllers/api/auth/register';
-import Login from '../controllers/api/auth/login';
 import Credentials from '../controllers/api/auth/credentials';
-import Delete from '../controllers/api/auth/delete';
+import Auth from '../controllers/api/auth/auth';
 
 export const register: Handler = async (event) => {
-  return await Register.create(event);
+  return await Auth.register(event);
 };
 
 export const login: Handler = async (event) => {
-  return await Login.authorize(event);
+  return await Auth.login(event);
 };
 
 export const updateCredentials: Handler = async (event) => {
@@ -21,5 +19,5 @@ export const updatePassword: Handler = async (event) => {
 };
 
 export const deleteUser: Handler = async (event) => {
-  return await Delete.remove(event);
+  return await Auth.delete(event);
 };
