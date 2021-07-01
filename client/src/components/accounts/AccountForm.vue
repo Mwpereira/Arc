@@ -1,21 +1,20 @@
 <template>
   <section>
-    <h2 class="is-size-3 mb-5 has-text-left" auto-id="header-panel">
+    <h2 auto-id="header-panel" class="is-size-3 mb-5 has-text-left">
       {{ editAccount === true ? 'Edit Account' : 'Add Account' }}
     </h2>
     <div class="columns">
-      <div class="column" id="accountForm">
+      <div id="accountForm" class="column">
         <div class="card m-5">
           <div class="card-content">
-            <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
+            <ValidationObserver ref="observer" v-slot="{ invalid, validate }">
               <form @submit.prevent="submit()">
                 <BInputWithValidation v-model="account.accountName"
-                                      label="Account Name"
-                                      required
-                                      maxlength="32"
-                                      rules="required|max_account_characters:32"
                                       fieldAutoId="field-account-name"
                                       inputAutoId="input-account-name"
+                                      label="Account Name"
+                                      maxlength="32"
+                                      rules="required|max_account_characters:32"
                 />
 
                 <b-field label="Email">
@@ -33,9 +32,9 @@
                 <b-field label="Category">
                   <b-select
                       v-model="account.category"
+                      auto-id="select-category"
                       icon="shape"
                       placeholder="Select"
-                      auto-id="select-category"
                       required
                   >
                     <option value="School">School</option>
@@ -52,24 +51,25 @@
                 <b-field label="Notes">
                   <b-input
                       v-model="account.notes"
+                      auto-id="input-notes"
                       maxlength="250"
                       type="textarea"
-                      auto-id="input-notes"
                   ></b-input>
                 </b-field>
 
                 <div class="level">
                   <button
+                      :disabled="invalid || account.category == null"
+                      auto-id="button-confirm"
                       class="button is-block is-fullwidth is-primary is-medium"
                       type="submit"
-                      auto-id="button-confirm"
                   >
                     {{ editAccount === true ? "Save" : "Add Account" }}
                   </button>
                   <button
+                      auto-id="button-cancel"
                       class="button is-block is-fullwidth is-warning is-medium"
                       @click="exit()"
-                      auto-id="button-cancel"
                   >
                     Cancel
                   </button>
@@ -175,7 +175,7 @@ h2 {
   color: white;
 }
 
-#accountForm{
+#accountForm {
   max-width: 800px;
 }
 </style>

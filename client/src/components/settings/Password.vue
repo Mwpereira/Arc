@@ -1,51 +1,50 @@
 <template>
   <div class="column">
-    <div class="card card-settings m-5" auto-id="card-password">
+    <div auto-id="card-password" class="card card-settings m-5">
       <div class="card-content">
         <div class="content">
-          <h2 class="is-size-3 has-text-centered" auto-id="header-card">Password</h2>
+          <h2 auto-id="header-card" class="is-size-3 has-text-centered">Password</h2>
         </div>
         <div class="content">
-          <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
+          <ValidationObserver ref="observer" v-slot="{ invalid, validate }">
             <form @submit.prevent="updatePassword()">
               <BInputWithValidation
                   v-model="passwords.currentPassword"
+                  fieldAutoId="field-password"
                   icon="lock"
+                  inputAutoId="input-password"
                   label="Current Password"
                   placeholder="Current Password"
                   rules="required"
                   type="password"
-                  fieldAutoId="field-password"
-                  inputAutoId="input-password"
               />
               <BInputWithValidation
                   v-model="passwords.newPassword"
+                  fieldAutoId="field-new-password"
                   icon="lock"
+                  inputAutoId="input-new-password"
                   label="New Password"
                   placeholder="New Password"
-                  required
                   rules="required|min_password:7"
                   type="password"
                   vid="password"
-                  fieldAutoId="field-new-password"
-                  inputAutoId="input-new-password"
               />
               <BInputWithValidation
+                  fieldAutoId="field-confirm-password"
                   icon="lock"
+                  inputAutoId="input-confirm-password"
                   label="Confirm New Password"
                   placeholder="Confirm New Password"
-                  required
                   rules="required|confirmed:password"
                   type="password"
-                  fieldAutoId="field-confirm-password"
-                  inputAutoId="input-confirm-password"
               />
 
               <div class="level mt-5">
                 <button
+                    :disabled="invalid"
+                    auto-id="button-confirm"
                     class="button is-block is-fullwidth is-primary is-medium"
                     type="submit"
-                    auto-id="button-confirm"
                 >
                   Update Password
                 </button>

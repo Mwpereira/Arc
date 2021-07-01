@@ -17,38 +17,41 @@
             <h2 auto-id="header-card" class="is-size-3 has-text-centered">Welcome Back!</h2>
           </div>
           <div class="content">
-            <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
+            <ValidationObserver ref="observer" v-slot="{ invalid, validate }">
               <form @submit.prevent="login">
                 <BInputWithValidation
                     v-model="user.username"
+                    fieldAutoId="field-username"
                     icon="account"
+                    inputAutoId="input-username"
+
                     label="Email / Username"
                     placeholder="Email / Username"
-                    required
                     rules="required"
                     type="username"
-                    fieldAutoId="field-username"
-                    inputAutoId="input-username"
                 />
                 <BInputWithValidation
                     v-model="user.password"
+                    fieldAutoId="field-password"
                     icon="lock"
+                    inputAutoId="input-password"
+
                     label="Password"
                     placeholder="Password"
-                    required
                     rules="required"
                     type="password"
                     vid="password"
-                    fieldAutoId="field-password"
-                    inputAutoId="input-password"
                 />
                 <BCheckboxesWithValidation>
-                  <b-checkbox v-model="rememberMe" :checked="rememberMe" type="is-warning" auto-id="checkbox-rememberMe">Remember Me</b-checkbox>
+                  <b-checkbox v-model="rememberMe" :checked="rememberMe" auto-id="checkbox-rememberMe"
+                              type="is-warning">Remember Me
+                  </b-checkbox>
                 </BCheckboxesWithValidation>
                 <button
+                    :disabled="invalid"
+                    auto-id="button-login"
                     class="button is-block is-fullwidth is-primary is-medium"
                     type="submit"
-                    auto-id="button-login"
                 >
                   Login
                 </button>
@@ -64,7 +67,8 @@
           </p>
           <p class="card-footer-item has-text-centered">
             <span>
-              View my <a href="https://github.com/Mwpereira" rel="noopener" target="_blank" auto-id="href-github">Github</a>
+              View my <a auto-id="href-github" href="https://github.com/Mwpereira" rel="noopener"
+                         target="_blank">Github</a>
             </span>
           </p>
         </footer>

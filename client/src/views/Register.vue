@@ -16,58 +16,55 @@
             <h2 auto-id="header-card" class="is-size-3 has-text-centered">Create Account</h2>
           </div>
           <div class="content">
-            <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
+            <ValidationObserver ref="observer" v-slot="{ invalid, validate }">
               <form @submit.prevent="register">
                 <BInputWithValidation
                     v-model="user.email"
+                    fieldAutoId="field-email"
                     icon="email"
+                    inputAutoId="input-email"
                     label="Email"
                     placeholder="Email"
-                    required
                     rules="required|email"
                     type="email"
-                    fieldAutoId="field-email"
-                    inputAutoId="input-email"
                 />
                 <BInputWithValidation
                     v-model="user.username"
+                    fieldAutoId="field-username"
                     icon="account"
+                    inputAutoId="input-username"
                     label="Username"
                     placeholder="Username"
-                    required
                     rules="required|username|min_username:3|max_username:18"
                     type="username"
-                    fieldAutoId="field-username"
-                    inputAutoId="input-username"
                 />
                 <BInputWithValidation
                     v-model="user.password"
+                    fieldAutoId="field-password"
                     icon="lock"
+                    inputAutoId="input-password"
                     label="Password"
                     placeholder="Password"
-                    required
                     rules="required|min_password:7"
                     type="password"
                     vid="password"
-                    fieldAutoId="field-password"
-                    inputAutoId="input-password"
                 />
                 <BInputWithValidation
                     v-model="confirmation"
+                    fieldAutoId="field-confirm-password"
                     icon="lock"
+                    inputAutoId="input-confirm-password"
                     label="Confirm Password"
                     placeholder="Confirm Password"
-                    required
                     rules="required|confirmed:password"
                     type="password"
-                    fieldAutoId="field-confirm-password"
-                    inputAutoId="input-confirm-password"
                 />
                 <div class="buttons">
                   <button
+                      :disabled="invalid"
+                      auto-id="button-register"
                       class="button is-block is-fullwidth is-primary is-medium"
                       type="submit"
-                      auto-id="button-register"
                   >
                     <span>Register</span>
                   </button>
@@ -83,7 +80,7 @@
           <p class="card-footer-item has-text-centered">
                         <span>
                             View my
-                            <a href="https://github.com/Mwpereira" rel="noopener" target="_blank" auto-id="href-github">Github</a>
+                            <a auto-id="href-github" href="https://github.com/Mwpereira" rel="noopener" target="_blank">Github</a>
                         </span>
           </p>
         </footer>
