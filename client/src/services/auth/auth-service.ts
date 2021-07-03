@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, {AxiosResponse} from 'axios';
 import * as Cookies from 'js-cookie';
-import { errorProcessor } from '../../utilities/response-utilities';
+import {errorProcessor} from '../../utilities/response-utilities';
 
 axios.defaults.withCredentials = true;
 
@@ -9,50 +9,55 @@ axios.defaults.withCredentials = true;
  */
 export default class AuthService {
 
-  public static async register(user: object): Promise<AxiosResponse> {
-    return axios
-      .post(`${this.url}/auth/register`, JSON.stringify({ user }))
-      .then((response: AxiosResponse) => {
-        return response;
-      })
-      .catch((error) => {
-        return errorProcessor(error.response);
-      });
-  }
+    private static readonly url: any =
+        process.env.VUE_APP_MODE === 'PRODUCTION'
+            ? `https://${process.env.VUE_APP_API}`
+            : `http://${process.env.VUE_APP_API_LOCAL}`;
 
-  public static async login(user: object): Promise<AxiosResponse> {
-    return axios
-      .post(`${this.url}/auth/login`, JSON.stringify({ user }))
-      .then((response: AxiosResponse) => {
-        return response;
-      })
-      .catch((error) => {
-        return errorProcessor(error.response);
-      });
-  }
-
-  public static async logout(): Promise<void> {
-    if (process.env.VUE_APP_MODE === 'PRODUCTION'){
-      Cookies.remove('accessToken');
+    public static async register(user: object): Promise<AxiosResponse> {
+        return axios
+            .post(`${this.url}/auth/register`, JSON.stringify({user}))
+            .then((response: AxiosResponse) => {
+                return response;
+            })
+            .catch((error) => {
+                return errorProcessor(error.response);
+            });
     }
-    else {
-      Cookies.remove('accessToken');
+
+    public static async login(user: object): Promise<AxiosResponse> {
+        return axios
+            .post(`${this.url}/auth/login`, JSON.stringify({user}))
+            .then((response: AxiosResponse) => {
+                return response;
+            })
+            .catch((error) => {
+                return errorProcessor(error.response);
+            });
     }
-  }
 
-  public static async refreshToken(): Promise<AxiosResponse> {
-    return axios
-      .get(`${this.url}/auth/refresh`)
-      .then((response: AxiosResponse) => {
-        return response;
-      })
-      .catch((error) => {
-        return error.response;
-      });
-  }
+    public static async logout() {
+        if (process.env.VUE_APP_MODE === 'DEVELOP'){
+            Cookies.remove('accessToken');
+        }
+        return axios
+            .get(`${this.url}/auth/logout`)
+            .then((response: AxiosResponse) => {
+                return response;
+            })
+            .catch((error) => {
+                return errorProcessor(error.response);
+            });
+    }
 
-  private static readonly url: any =
-    process.env.VUE_APP_MODE === 'PRODUCTION'
-      ? `https://${process.env.VUE_APP_API}`
-      : `http://${process.env.VUE_APP_API_LOCAL}`;
+    public static async refreshToken(): Promise<AxiosResponse> {
+        return axios
+            .get(`${this.url}/auth/refresh`)
+            .then((response: AxiosResponse) => {
+                return response;
+            })
+            .catch((error) => {
+                return error.response;
+            });
+    }
 }

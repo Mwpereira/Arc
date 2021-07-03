@@ -2,12 +2,12 @@ import AuthTable from '../../../utilities/auth-processor-utilities';
 import BcryptUtilities from '../../../utilities/bcrypt-utilities';
 import MessageUtil from '../../../utilities/response-message-utilities';
 import JwtUtilities from '../../../utilities/jwt-utilities';
-import { AuthorizeUserRequest } from '../../../interfaces/authorize-user-request';
-import { Response } from '../../../interfaces/response';
+import {AuthorizeUserRequest} from '../../../interfaces/authorize-user-request';
+import {Response} from '../../../interfaces/response';
 import PayloadValidator from '../../../utilities/payload-validator-utilities';
 import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
-import { MessageConstants } from '../../../constants/message-constants';
-import { LoginRequest } from '../../../interfaces/login-request';
+import {MessageConstants} from '../../../constants/message-constants';
+import {LoginRequest} from '../../../interfaces/login-request';
 import {CreateUserRequest} from '../../../interfaces/create-user-request';
 import {RegisterRequest} from '../../../interfaces/register-request';
 import ArcTable from '../../../utilities/arc-processor-utilities';
@@ -17,7 +17,6 @@ export default class Auth {
     /**
      * Contains method for Authorizing a User
      */
-
     static async login(event: any): Promise<Response> {
         try {
             const user: AuthorizeUserRequest = PayloadValidator.validateLogin(
@@ -67,7 +66,6 @@ export default class Auth {
     /**
      * Contains method for Creating a User
      */
-
     static async register(event: any): Promise<Response> {
         try {
             const user: CreateUserRequest = PayloadValidator.validateRegister(
@@ -102,7 +100,6 @@ export default class Auth {
     /**
      * Contains method for Deleting a User
      */
-
     static async delete(event: any): Promise<Response> {
         try {
             const id = RequestMapperUtilities.getId(event);

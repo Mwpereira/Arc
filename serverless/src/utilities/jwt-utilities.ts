@@ -23,6 +23,18 @@ export default class JwtUtilities {
   }
 
   /**
+   * Expires JWT For Protected Routes
+   *
+   * @return JWT
+   */
+  static expireJwt(): string {
+    return jwt.sign(
+        {},
+        process.env.APP_SECRET
+    );
+  }
+
+  /**
    * Refreshes JWT
    *
    * @param user
