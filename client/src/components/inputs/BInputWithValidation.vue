@@ -1,16 +1,16 @@
 <template>
   <ValidationProvider
-      :vid="vid"
+      v-slot="{ errors, valid }"
       :name="$attrs.name || $attrs.label"
       :rules="rules"
-      v-slot="{ errors, valid }"
+      :vid="vid"
   >
     <b-field
         v-bind="$attrs"
-        :type="{ 'is-danger': errors[0], 'is-success': valid }"
-        :message="errors"
-        style="margin-bottom: 12px"
         :auto-id="fieldAutoId"
+        :message="errors"
+        :type="{ 'is-danger': errors[0], 'is-success': valid }"
+        style="margin-bottom: 12px"
     >
       <b-input v-model="innerValue" v-bind="$attrs" :auto-id="inputAutoId"></b-input>
     </b-field>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ValidationProvider } from "vee-validate";
+import {ValidationProvider} from "vee-validate";
 
 export default {
   components: {
@@ -36,10 +36,10 @@ export default {
     value: {
       type: null
     },
-    fieldAutoId:{
+    fieldAutoId: {
       type: String
     },
-    inputAutoId:{
+    inputAutoId: {
       type: String
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="is-size-3 mb-5" auto-id="header-panel">Accounts</h2>
+    <h2 auto-id="header-panel" class="is-size-3 mb-5">Accounts</h2>
     <div class="columns is-multiline is-center is-vcentered has-text-centered">
       <div v-if="accounts === null" class="column">
         <div class="card card-fixed m-5" @click="addAccount()">
@@ -21,7 +21,7 @@
       </div>
       <div v-for="account in accounts" :key="account.accountName" class="column">
         <div class="card card-account m-5" @click="loadAccount(account.id)">
-          <div class="card-content" :auto-id="account.id">
+          <div :auto-id="account.id" class="card-content">
             <div class="level-item">
               <b-icon
                   :icon="loadIcon(account.category)"

@@ -1,4 +1,4 @@
 export interface Accounts {
-  id: string;
-  accounts: object;
+    id: string;
+    accounts: object;
 }

@@ -1,5 +1,5 @@
 <template>
-  <ValidationProvider :vid="vid" :name="$attrs.label" :rules="rules" v-slot="{ errors }">
+  <ValidationProvider v-slot="{ errors }" :name="$attrs.label" :rules="rules" :vid="vid">
     <div class="block">
       <slot/>
       <p class="has-text-danger">{{ errors[0] }}</p>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ValidationProvider } from "vee-validate";
+import {ValidationProvider} from "vee-validate";
 
 export default {
   components: {

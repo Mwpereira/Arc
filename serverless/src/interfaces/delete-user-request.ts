@@ -1,4 +1,4 @@
 export interface DeleteUserRequest {
-  email: string;
-  username: string;
+    email: string;
+    username: string;
 }

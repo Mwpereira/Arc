@@ -1,13 +1,13 @@
 <template>
   <section>
-    <h2 class="is-size-3 mb-5" auto-id="header-panel">Accounts Summary</h2>
+    <h2 auto-id="header-panel" class="is-size-3 mb-5">Accounts Summary</h2>
     <div class="columns is-multiline is-center is-vcentered has-text-centered">
       <div class="column is-12">
         <div v-if="this.$store.getters.accounts !== null">
           <canvas id="accountsChart"></canvas>
         </div>
         <div v-else>
-          <h2 class="is-size-4" auto-id="header-panel">
+          <h2 auto-id="header-panel" class="is-size-4">
             No Accounts are Available
           </h2>
         </div>
@@ -33,18 +33,18 @@ export default {
       Family: 0
     };
   },
-  computed:{
-    accounts(){
+  computed: {
+    accounts() {
       return this.$store.getters.accounts;
     }
   },
-  watch:{
-    accounts(){
+  watch: {
+    accounts() {
       this.loadAccountsSummary();
     }
   },
-  methods:{
-    loadAccountsSummary(){
+  methods: {
+    loadAccountsSummary() {
       const accounts = this.$store.getters.accounts;
 
       if (accounts) {

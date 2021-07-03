@@ -36,7 +36,8 @@
           <p class="card-footer-item has-text-centered">
                         <span>
                             View my <a auto-id="href-linkedin"
-                                       href="https://www.linkedin.com/in/michael-pereira-07/" rel="noopener" target="_blank">LinkedIn</a>
+                                       href="https://www.linkedin.com/in/michael-pereira-07/" rel="noopener"
+                                       target="_blank">LinkedIn</a>
                         </span>
           </p>
         </footer>

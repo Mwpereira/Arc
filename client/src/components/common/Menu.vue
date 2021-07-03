@@ -4,12 +4,13 @@
       <img alt="Arc" src="../../assets/logo.webp" style="max-width: 150px" webp-fallback=".png"/>
     </figure>
     <b-menu-list>
-      <b-menu-item icon="home" label="Dashboard" @click="exit()" auto-id="navigation-dashboard"></b-menu-item>
-      <b-menu-item icon="database" label="Accounts" @click="accounts()" auto-id="navigation-accounts"></b-menu-item>
-      <b-menu-item icon="plus" label="Add Account" @click="addAccount()" auto-id="navigation-add-account"></b-menu-item>
-      <b-menu-item icon="account" label="User Settings" @click="settings()" auto-id="navigation-user-settings"></b-menu-item>
-      <b-menu-item icon="information-outline" label="About" @click="about()" auto-id="navigation-about"></b-menu-item>
-      <b-menu-item icon="door" label="Logout" @click="logout()" auto-id="navigation-logout"></b-menu-item>
+      <b-menu-item auto-id="navigation-dashboard" icon="home" label="Dashboard" @click="exit()"></b-menu-item>
+      <b-menu-item auto-id="navigation-accounts" icon="database" label="Accounts" @click="accounts()"></b-menu-item>
+      <b-menu-item auto-id="navigation-add-account" icon="plus" label="Add Account" @click="addAccount()"></b-menu-item>
+      <b-menu-item auto-id="navigation-user-settings" icon="account" label="User Settings"
+                   @click="settings()"></b-menu-item>
+      <b-menu-item auto-id="navigation-about" icon="information-outline" label="About" @click="about()"></b-menu-item>
+      <b-menu-item auto-id="navigation-logout" icon="door" label="Logout" @click="logout()"></b-menu-item>
     </b-menu-list>
   </div>
 </template>
@@ -18,7 +19,7 @@
 export default {
   name: "Menu",
   methods: {
-    about(){
+    about() {
       this.$store.commit('setPanel', 'About');
     },
     accounts() {

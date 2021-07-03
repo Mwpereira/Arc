@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="columns is-mobile">
-      <div class="column is-2" id="dashboardLeftPanel">
-        <LeftPanel />
+      <div id="dashboardLeftPanel" class="column is-2">
+        <LeftPanel/>
       </div>
-      <div class="column is-10" id="dashboardPanel">
-        <Panel />
+      <div id="dashboardPanel" class="column is-10">
+        <Panel/>
       </div>
     </div>
   </div>

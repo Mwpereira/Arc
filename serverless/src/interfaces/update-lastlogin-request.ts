@@ -1,4 +1,4 @@
 export interface UpdateLastloginRequest {
-  id: string;
-  lastLogin: number;
+    id: string;
+    lastLogin: number;
 }

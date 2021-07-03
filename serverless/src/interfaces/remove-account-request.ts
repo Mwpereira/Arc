@@ -1,5 +1,5 @@
 export interface RemoveAccountRequest {
-  id: string;
-  account: object;
-  updatedAt: number;
+    id: string;
+    account: object;
+    updatedAt: number;
 }

@@ -1,5 +1,5 @@
 export interface UpdatePasswordRequest {
-  id: string;
-  password: string;
-  passwordStrength: string;
+    id: string;
+    password: string;
+    passwordStrength: string;
 }

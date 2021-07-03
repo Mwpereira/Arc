@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h2 class="is-size-3 mb-5" auto-id="header-panel">Dashboard</h2>
+    <h2 auto-id="header-panel" class="is-size-3 mb-5">Dashboard</h2>
     <div class="columns is-multiline is-center is-vcentered has-text-centered">
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-user">
+        <div auto-id="card-user" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">User</h2>
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-security">
+        <div auto-id="card-security" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">Security</h2>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-last-login">
+        <div auto-id="card-last-login" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">Last Login</h2>
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-accounts">
+        <div auto-id="card-accounts" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">Accounts</h2>
@@ -63,15 +63,15 @@
         </div>
       </div>
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-accounts-summary">
+        <div auto-id="card-accounts-summary" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">Accounts Summary</h2>
             </div>
             <div class="level-item">
               <button
-                  class="button is-block is-half is-dark is-medium"
                   :disabled="noAccounts"
+                  class="button is-block is-half is-dark is-medium"
                   @click="loadAccountsSummary()"
               >
                 Click to View
@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="column">
-        <div class="card card-info m-5" auto-id="card-home-page">
+        <div auto-id="card-home-page" class="card card-info m-5">
           <div class="card-content">
             <div class="content">
               <h2 class="is-size-3 has-text-centered">Home Page</h2>
@@ -89,14 +89,14 @@
             <div class="content">
               <p><b>Current Home Page:&nbsp</b>{{ homePage }}</p>
               <b-radio v-model="page"
-                       name="Dashboard"
-                       native-value="Dashboard" auto-id="radio-home-page">
+                       auto-id="radio-home-page"
+                       name="Dashboard" native-value="Dashboard">
                 Dashboard
               </b-radio>
               <b-radio v-model="page"
+                       auto-id="radio-home-page"
                        name="Accounts"
-                       native-value="Accounts"
-                       auto-id="radio-home-page">
+                       native-value="Accounts">
                 Accounts
               </b-radio>
             </div>
@@ -130,7 +130,7 @@ export default {
     homePage() {
       return this.$store.getters.homePage;
     },
-    noAccounts(){
+    noAccounts() {
       return (this.$store.getters.accounts === null);
     },
     numberOfAccounts() {
@@ -159,7 +159,7 @@ export default {
   height: 175px;
 }
 
-.user-info{
+.user-info {
   word-break: break-all;
 }
 
@@ -168,7 +168,7 @@ export default {
   padding: 0 8px 0 8px;
 }
 
-.b-radio.radio:hover{
+.b-radio.radio:hover {
   color: white;
 }
 </style>

@@ -1,4 +1,4 @@
 export interface UpdateCredentialsRequest {
-  id: string;
-  credentials: string;
+    id: string;
+    credentials: string;
 }

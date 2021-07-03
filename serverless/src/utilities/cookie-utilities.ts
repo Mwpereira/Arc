@@ -8,7 +8,7 @@ export default class CookieUtilities {
   private readonly path = '/';
   private readonly sameSite = 'NONE';
   private readonly secure = true;
-  private readonly httpOnly = false;
+  private readonly httpOnly = true;
 
   constructor(payload: AccessToken) {
     this.cookie = payload.cookie;

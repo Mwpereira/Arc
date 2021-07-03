@@ -1,4 +1,4 @@
-import {app, protocol, BrowserWindow, session} from 'electron';
+import {app, BrowserWindow, protocol, session} from 'electron';
 import {createProtocol} from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, {VUEJS_DEVTOOLS} from 'electron-devtools-installer';
 

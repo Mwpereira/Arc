@@ -15,7 +15,7 @@ import Arc from "@/components/about/Arc";
 import Creator from "@/components/about/Creator";
 
 export default {
-name: "About.vue",
+  name: "About.vue",
   components: {Arc, Creator}
 }
 </script>

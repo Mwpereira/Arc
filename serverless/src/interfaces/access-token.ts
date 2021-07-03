@@ -1,4 +1,4 @@
 export interface AccessToken {
-  cookie: string;
-  expires: Date;
+    cookie: string;
+    expires: Date;
 }

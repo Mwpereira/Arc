@@ -1,4 +1,4 @@
 export interface UpdateEmailRequest {
-  id: string;
-  email: string;
+    id: string;
+    email: string;
 }

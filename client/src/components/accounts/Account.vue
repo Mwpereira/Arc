@@ -2,7 +2,7 @@
   <section>
     <h2 auto-id="header-panel" class="is-size-3 has-text-left mb-5">Account</h2>
     <div class="columns">
-      <div class="column" id="account">
+      <div id="account" class="column">
         <div class="card m-5">
           <div class="card-content">
             <b-field auto-id="field-account-name" class="mb-5" label="Account Name">
@@ -26,7 +26,7 @@
             </b-field>
 
             <b-field auto-id="field-notes" class="mb-6" label="Notes">
-              <b-field :label="account.notes === '' ? 'Empty' : account.notes" auto-id="field-notes" id="notes"/>
+              <b-field id="notes" :label="account.notes === '' ? 'Empty' : account.notes" auto-id="field-notes"/>
             </b-field>
 
             <div class="level-item">
@@ -89,11 +89,11 @@ div.card-content > div.field > div.field > label {
   font-weight: 300;
 }
 
-#notes{
+#notes {
   word-break: break-all;
 }
 
-#account{
+#account {
   max-width: 800px;
 }
 </style>

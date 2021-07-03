@@ -1,4 +1,4 @@
 export interface UpdateUsernameRequest {
-  id: string;
-  username: string;
+    id: string;
+    username: string;
 }

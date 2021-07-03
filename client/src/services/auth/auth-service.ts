@@ -37,7 +37,7 @@ export default class AuthService {
     }
 
     public static async logout() {
-        if (process.env.VUE_APP_MODE === 'DEVELOP'){
+        if (process.env.VUE_APP_MODE === 'DEVELOP') {
             Cookies.remove('accessToken');
         }
         return axios

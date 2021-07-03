@@ -1,16 +1,16 @@
 <template>
   <div class="column">
-    <div class="card card-settings m-5" auto-id="card-arc">
+    <div auto-id="card-arc" class="card card-settings m-5">
       <div class="card-content">
         <div class="content">
-          <h2 class="is-size-3 has-text-centered" auto-id="header-card">Arc</h2>
+          <h2 auto-id="header-card" class="is-size-3 has-text-centered">Arc</h2>
         </div>
         <div class="content has-text-centered is-size-5">
           <p>Arc Version: v1.0.0</p>
           <p>Front end Frameworks: Vue.js + Bulma</p>
           <p>Back end Server: AWS Serverless</p>
-          <p>Found a bug? <a href="https://github.com/mwpereira/arc/issues/" rel="noopener"
-                             target="_blank" auto-id="href-github-issues">Post here</a></p>
+          <p>Found a bug? <a auto-id="href-github-issues" href="https://github.com/mwpereira/arc/issues/"
+                             rel="noopener" target="_blank">Post here</a></p>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="column">
-    <div class="card card-settings m-5" auto-id="card-credentials">
+    <div auto-id="card-credentials" class="card card-settings m-5">
       <div class="card-content">
         <div class="content">
-          <h2 class="is-size-3 has-text-centered" auto-id="header-card">Credentials</h2>
+          <h2 auto-id="header-card" class="is-size-3 has-text-centered">Credentials</h2>
         </div>
         <div class="content">
           <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
@@ -11,29 +11,29 @@
               <BInputWithValidation
                   v-model="credentials.email"
                   :placeholder=placeHolder.email
+                  fieldAutoId="field-email"
                   icon="email"
+                  inputAutoId="input-email"
                   label="Email"
                   rules="email"
                   type="email"
-                  fieldAutoId="field-email"
-                  inputAutoId="input-email"
               />
               <BInputWithValidation
                   v-model="credentials.username"
                   :placeholder=placeHolder.username
+                  fieldAutoId="field-username"
                   icon="account"
+                  inputAutoId="input-username"
                   label="Username"
                   rules="username|min_username:3|max_username:18"
                   type="username"
-                  fieldAutoId="field-username"
-                  inputAutoId="input-username"
               />
 
               <div class="level mt-5">
                 <button
+                    auto-id="button-confirm"
                     class="button is-block is-fullwidth is-primary is-medium"
                     type="submit"
-                    auto-id="button-confirm"
                 >
                   Save Credentials
                 </button>
@@ -41,9 +41,9 @@
             </form>
             <div class="level mt-5">
               <button
+                  auto-id="button-delete"
                   class="button is-block is-fullwidth is-danger is-medium"
                   @click="deleteUser()"
-                  auto-id="button-delete"
               >
                 Delete User Permanently
               </button>
@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style scoped>
-.card{
+.card {
   height: 438px !important;
 }
 </style>

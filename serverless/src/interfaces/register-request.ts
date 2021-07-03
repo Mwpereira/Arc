@@ -1,9 +1,9 @@
 export interface RegisterRequest {
-  id: string;
-  email: string;
-  username: string;
-  password: string;
-  passwordStrength: string;
-  accounts: string;
-  lastLogin: number;
+    id: string;
+    email: string;
+    username: string;
+    password: string;
+    passwordStrength: string;
+    accounts: string;
+    lastLogin: number;
 }
