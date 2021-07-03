@@ -32,10 +32,18 @@ export default class AuthService {
   }
 
   public static async logout(): Promise<void> {
-    Cookies.remove('accessToken', {
-      path: '/',
-      domain: process.env.VUE_APP_DOMAIN,
-    });
+    if (process.env.VUE_APP_MODE === 'PRODUCTION'){
+      Cookies.remove('accessToken', {
+        path: '/',
+        domain: 'michaelpereira.dev',
+      });
+    }
+    else {
+      Cookies.remove('accessToken', {
+        path: '/',
+        domain: 'localhost',
+      });
+    }
   }
 
   public static async refreshToken(): Promise<AxiosResponse> {

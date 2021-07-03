@@ -24,7 +24,6 @@
                     fieldAutoId="field-username"
                     icon="account"
                     inputAutoId="input-username"
-
                     label="Email / Username"
                     placeholder="Email / Username"
                     rules="required"
@@ -35,7 +34,6 @@
                     fieldAutoId="field-password"
                     icon="lock"
                     inputAutoId="input-password"
-
                     label="Password"
                     placeholder="Password"
                     rules="required"

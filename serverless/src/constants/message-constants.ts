@@ -18,7 +18,7 @@ export abstract class MessageConstants {
     public static readonly VALID_TOKEN: string = 'Valid Token';
 
     /**
-     * Success message for getting Settings
+     * Success message for getting Accounts
      */
     public static readonly ACCOUNT_GET_SUCCESS: string = 'Retrieved Accounts';
 
