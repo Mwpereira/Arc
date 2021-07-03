@@ -33,16 +33,10 @@ export default class AuthService {
 
   public static async logout(): Promise<void> {
     if (process.env.VUE_APP_MODE === 'PRODUCTION'){
-      Cookies.remove('accessToken', {
-        path: '/',
-        domain: 'michaelpereira.dev',
-      });
+      Cookies.remove('accessToken');
     }
     else {
-      Cookies.remove('accessToken', {
-        path: '/',
-        domain: 'localhost',
-      });
+      Cookies.remove('accessToken');
     }
   }
 

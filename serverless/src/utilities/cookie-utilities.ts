@@ -5,10 +5,10 @@ const cookie = require('cookie');
 export default class CookieUtilities {
   private readonly cookie: string;
   private readonly expires: Date;
-  private readonly path: string = '/';
-  private readonly sameSite: string = 'NONE';
-  private readonly secure: boolean = true;
-  private readonly httpOnly: boolean = true;
+  private readonly path = '/';
+  private readonly sameSite = 'NONE';
+  private readonly secure = true;
+  private readonly httpOnly = false;
 
   constructor(payload: AccessToken) {
     this.cookie = payload.cookie;
