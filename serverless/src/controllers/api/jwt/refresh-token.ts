@@ -1,8 +1,8 @@
-import MessageUtil from '../../../utilities/response-message-utilities';
-import JwtUtilities from '../../../utilities/jwt-utilities';
-import {Response} from '../../../interfaces/response';
 import {MessageConstants} from '../../../constants/message-constants';
+import {Response} from '../../../interfaces/response';
 import CookieUtilities from '../../../utilities/cookie-utilities';
+import JwtUtilities from '../../../utilities/jwt-utilities';
+import MessageUtil from '../../../utilities/response-message-utilities';
 
 /**
  * Refresh JWT Token

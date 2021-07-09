@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import AuthService from '../services/auth/auth-service';
-import UserService from '../services/user/user-service';
+import {AxiosResponse} from 'axios';
 import createPersistedState from 'vuex-persistedstate';
+import router from '../router/router';
+import AuthService from '../services/auth/auth-service';
+import Loading from '../services/ui/loading';
+import Toasts from '../services/ui/toasts';
+import UserService from '../services/user/user-service';
 import {loadAccount} from '../utilities/common-utilities';
 import {successAuthProcessor, successProcessor} from '../utilities/response-utilities';
-import Toasts from '../services/ui/toasts';
-import Loading from '../services/ui/loading';
-import {AxiosResponse} from 'axios';
-import router from '../router/router';
 
 Vue.use(Vuex);
 

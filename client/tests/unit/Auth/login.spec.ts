@@ -1,6 +1,6 @@
 import {AxiosResponse} from 'axios';
-import {MessageConstants} from '../../utilities/message-constants';
 import * as faker from 'faker';
+import {MessageConstants} from '../../utilities/message-constants';
 import {loginRequest} from '../Utilities/common-utilities';
 
 let response: AxiosResponse;

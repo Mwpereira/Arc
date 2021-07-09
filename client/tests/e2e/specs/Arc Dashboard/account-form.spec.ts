@@ -1,3 +1,4 @@
+import * as faker from 'faker';
 import {
     addAccount, clickOff,
     deleteAccount,
@@ -10,7 +11,6 @@ import {
     Selectors,
     startup,
 } from '../../support/support';
-import * as faker from 'faker';
 
 describe('Checks Account Form on AccountForm.vue', () => {
     beforeEach(() => {

@@ -1,7 +1,7 @@
 import {Handler} from 'aws-lambda';
+import Logout from '../controllers/api/jwt/logout';
 import RefreshToken from '../controllers/api/jwt/refresh-token';
 import VerifyToken from '../controllers/api/jwt/verify-token';
-import Logout from '../controllers/api/jwt/logout';
 
 export const verifyToken: Handler = async (event) => {
     return await VerifyToken.verify(event);

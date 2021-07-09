@@ -1,7 +1,7 @@
-import MessageUtil from '../../../utilities/response-message-utilities';
-import JwtUtilities from '../../../utilities/jwt-utilities';
 import {MessageConstants} from '../../../constants/message-constants';
 import CookieUtilities from '../../../utilities/cookie-utilities';
+import JwtUtilities from '../../../utilities/jwt-utilities';
+import MessageUtil from '../../../utilities/response-message-utilities';
 
 /**
  * Verify JWT Token

@@ -1,3 +1,4 @@
+import {MessageConstants} from '../../../utilities/message-constants';
 import {
     clickOff,
     getByAutoId,
@@ -7,7 +8,6 @@ import {
     Selectors,
     startup,
 } from '../../support/support';
-import {MessageConstants} from '../../../utilities/message-constants';
 
 describe('Login.vue', () => {
     beforeEach(() => {

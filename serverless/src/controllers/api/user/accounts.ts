@@ -1,10 +1,10 @@
-import AccountsTable from '../../../utilities/accounts-processor-utilities';
-import MessageUtil from '../../../utilities/response-message-utilities';
-import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
-import {Response} from '../../../interfaces/response';
 import _ from 'lodash';
 import {MessageConstants} from '../../../constants/message-constants';
+import {Response} from '../../../interfaces/response';
+import AccountsTable from '../../../utilities/accounts-processor-utilities';
 import PayloadValidator from '../../../utilities/payload-validator-utilities';
+import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
+import MessageUtil from '../../../utilities/response-message-utilities';
 
 /**
  * Contains method for receiving User's Accounts

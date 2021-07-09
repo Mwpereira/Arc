@@ -1,5 +1,5 @@
-import * as faker from 'faker';
 import axios, {AxiosResponse} from 'axios';
+import * as faker from 'faker';
 
 const url =
     process.env.VUE_APP_MODE === 'PRODUCTION'

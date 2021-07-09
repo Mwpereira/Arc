@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from 'axios';
+import * as faker from 'faker';
 import {MessageConstants} from '../../utilities/message-constants';
 import AuthUtilities from '../Utilities/auth-utilities';
-import * as faker from 'faker';
 import {editAccount, generateUpdatedAccountWithId} from '../Utilities/common-utilities';
 
 axios.defaults.withCredentials = true;

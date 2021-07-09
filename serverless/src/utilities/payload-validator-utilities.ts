@@ -1,6 +1,6 @@
 import assert from 'assert';
-import * as validator from 'validator';
 import * as uuid from 'uuid';
+import * as validator from 'validator';
 import {Category} from '../enums/category';
 
 export default class PayloadValidator {

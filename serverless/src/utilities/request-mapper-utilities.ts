@@ -1,17 +1,17 @@
+import {APIGatewayEvent} from 'aws-lambda';
 import * as uuid from 'uuid';
 import validator from 'validator';
-import BcryptUtilities from './bcrypt-utilities';
 import {Accounts} from '../interfaces/accounts';
 import {AddAccountRequest} from '../interfaces/add-account-request';
-import {RegisterRequest} from '../interfaces/register-request';
-import PayloadValidator from './payload-validator-utilities';
-import {UpdateEmailRequest} from '../interfaces/update-email-request';
-import {UpdateUsernameRequest} from '../interfaces/update-username-request';
-import {UpdatePasswordRequest} from '../interfaces/update-password-request';
-import {UpdateCredentialsRequest} from '../interfaces/update-credentials-request';
-import {UpdateLastloginRequest} from '../interfaces/update-lastlogin-request';
 import {LoginRequest} from '../interfaces/login-request';
-import {APIGatewayEvent} from 'aws-lambda';
+import {RegisterRequest} from '../interfaces/register-request';
+import {UpdateCredentialsRequest} from '../interfaces/update-credentials-request';
+import {UpdateEmailRequest} from '../interfaces/update-email-request';
+import {UpdateLastloginRequest} from '../interfaces/update-lastlogin-request';
+import {UpdatePasswordRequest} from '../interfaces/update-password-request';
+import {UpdateUsernameRequest} from '../interfaces/update-username-request';
+import BcryptUtilities from './bcrypt-utilities';
+import PayloadValidator from './payload-validator-utilities';
 
 export default class RequestMapperUtilities {
     /**

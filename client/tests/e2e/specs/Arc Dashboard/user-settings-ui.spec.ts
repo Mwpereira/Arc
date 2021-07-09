@@ -1,5 +1,5 @@
-import {clickOff, getByAutoId, login, logout, navigateToUserSettings, Selectors, startup} from '../../support/support';
 import * as faker from 'faker';
+import {clickOff, getByAutoId, login, logout, navigateToUserSettings, Selectors, startup} from '../../support/support';
 
 describe('Checks User Settings Form on User.vue', () => {
     before(() => {

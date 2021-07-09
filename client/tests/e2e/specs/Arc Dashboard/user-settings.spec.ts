@@ -1,3 +1,5 @@
+import * as faker from 'faker';
+import {MessageConstants} from '../../../utilities/message-constants';
 import {
     deleteUser,
     getByAutoId,
@@ -8,8 +10,6 @@ import {
     Selectors,
     startup,
 } from '../../support/support';
-import * as faker from 'faker';
-import {MessageConstants} from '../../../utilities/message-constants';
 
 let user: { email: string; username: string; password: string; };
 

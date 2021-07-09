@@ -1,6 +1,6 @@
 import {Handler} from 'aws-lambda';
-import Credentials from '../controllers/api/auth/credentials';
 import Auth from '../controllers/api/auth/auth';
+import Credentials from '../controllers/api/auth/credentials';
 
 export const register: Handler = async (event) => {
     return await Auth.register(event);

@@ -1,16 +1,16 @@
+import {MessageConstants} from '../../../constants/message-constants';
+import {AuthorizeUserRequest} from '../../../interfaces/authorize-user-request';
+import {CreateUserRequest} from '../../../interfaces/create-user-request';
+import {LoginRequest} from '../../../interfaces/login-request';
+import {RegisterRequest} from '../../../interfaces/register-request';
+import {Response} from '../../../interfaces/response';
+import ArcTable from '../../../utilities/arc-processor-utilities';
 import AuthTable from '../../../utilities/auth-processor-utilities';
 import BcryptUtilities from '../../../utilities/bcrypt-utilities';
-import MessageUtil from '../../../utilities/response-message-utilities';
 import JwtUtilities from '../../../utilities/jwt-utilities';
-import {AuthorizeUserRequest} from '../../../interfaces/authorize-user-request';
-import {Response} from '../../../interfaces/response';
 import PayloadValidator from '../../../utilities/payload-validator-utilities';
 import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
-import {MessageConstants} from '../../../constants/message-constants';
-import {LoginRequest} from '../../../interfaces/login-request';
-import {CreateUserRequest} from '../../../interfaces/create-user-request';
-import {RegisterRequest} from '../../../interfaces/register-request';
-import ArcTable from '../../../utilities/arc-processor-utilities';
+import MessageUtil from '../../../utilities/response-message-utilities';
 
 export default class Auth {
 

@@ -1,7 +1,7 @@
-import {Response} from '../interfaces/response';
-import {AccessToken} from '../interfaces/access-token';
-import CookieUtilities from './cookie-utilities';
 import {responseHeader} from '../constants/header-constant';
+import {AccessToken} from '../interfaces/access-token';
+import {Response} from '../interfaces/response';
+import CookieUtilities from './cookie-utilities';
 
 export class Result {
     private readonly statusCode: number;

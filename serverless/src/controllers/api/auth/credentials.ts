@@ -1,11 +1,11 @@
-import {Response} from '../../../interfaces/response';
-import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
-import AuthTable from '../../../utilities/auth-processor-utilities';
-import PayloadValidator from '../../../utilities/payload-validator-utilities';
-import JwtUtilities from '../../../utilities/jwt-utilities';
-import MessageUtil from '../../../utilities/response-message-utilities';
 import {MessageConstants} from '../../../constants/message-constants';
+import {Response} from '../../../interfaces/response';
+import AuthTable from '../../../utilities/auth-processor-utilities';
 import BcryptUtilities from '../../../utilities/bcrypt-utilities';
+import JwtUtilities from '../../../utilities/jwt-utilities';
+import PayloadValidator from '../../../utilities/payload-validator-utilities';
+import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
+import MessageUtil from '../../../utilities/response-message-utilities';
 
 /**
  * Contains method for Updating a User's Credentials and Password

@@ -1,6 +1,6 @@
-import RequestMapperUtilities from './request-mapper-utilities';
 import * as dynamoDB from 'dynamoose';
 import {ArcSchema} from '../models/arc';
+import RequestMapperUtilities from './request-mapper-utilities';
 
 const arcTable: any = dynamoDB.model('arc', ArcSchema);
 

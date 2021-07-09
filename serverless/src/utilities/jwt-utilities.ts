@@ -1,5 +1,5 @@
-import * as jwt from 'jsonwebtoken';
 import {PolicyDocument} from 'aws-lambda';
+import * as jwt from 'jsonwebtoken';
 
 /**
  * Helper methods for JWT

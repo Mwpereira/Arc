@@ -18,7 +18,7 @@
     },
     "no-var-requires": false,
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "ordered-imports": true,
     "quotemark": [true, "single"]
   },
   "jsRules": {
