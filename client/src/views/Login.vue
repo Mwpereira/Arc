@@ -77,8 +77,8 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "@/components/inputs/BInputWithValidation";
-import BCheckboxesWithValidation from "@/components/inputs/BCheckboxesWithValidation";
+import BInputWithValidation from "../components/common/inputs/BInputWithValidation";
+import BCheckboxesWithValidation from "../components/common/inputs/BCheckboxesWithValidation";
 
 export default {
   name: "Login",

@@ -91,7 +91,7 @@
 
 <script>
 import {ValidationObserver} from 'vee-validate';
-import BInputWithValidation from '@/components/inputs/BInputWithValidation';
+import BInputWithValidation from "../components/common/inputs/BInputWithValidation";
 
 export default {
   name: 'Register',
