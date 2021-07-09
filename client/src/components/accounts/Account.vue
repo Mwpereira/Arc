@@ -79,6 +79,9 @@ export default {
       this.$store.dispatch("setPanel", "Accounts");
     },
   },
+  created(){
+    document.title = 'Account - Arc';
+  }
 };
 </script>
 

@@ -93,6 +93,7 @@ export default {
     };
   },
   async created() {
+    document.title = 'Login - Arc';
     if (this.$store.getters.isLoggedIn) {
       await this.$store.dispatch("getAccounts", this.$store.getters.username)
       await this.$router.push('/dashboard');
@@ -120,7 +121,7 @@ export default {
   mounted() {
     if (localStorage.getItem('user') != null)
       this.user.username = localStorage.getItem('user');
-  }
+  },
 }
 
 </script>

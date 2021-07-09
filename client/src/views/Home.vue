@@ -53,6 +53,9 @@ export default {
     pageSwitch(p) {
       this.$router.push(`${p}`);
     }
+  },
+  created(){
+    document.title = 'Arc';
   }
 };
 </script>

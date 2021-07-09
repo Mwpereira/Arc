@@ -88,6 +88,9 @@ export default {
       return this.pack[`${category}`];
     }
   },
+  created(){
+    document.title = 'Accounts - Arc';
+  }
 }
 </script>
 

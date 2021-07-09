@@ -188,8 +188,8 @@ export default new Vuex.Store({
         },
         async logout({commit}) {
             commit('auth_logout');
-            await AuthService.logout();
             await router.push('/login');
+            await AuthService.logout();
             Toasts.success('Signed Out');
         },
         async register({commit}, user): Promise<boolean> {

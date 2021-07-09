@@ -107,6 +107,7 @@ export default {
     };
   },
   async created() {
+    document.title = 'Register - Arc';
     if (this.$store.getters.isLoggedIn) {
       await this.$router.push('/dashboard');
     }

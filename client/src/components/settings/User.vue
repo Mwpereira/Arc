@@ -17,6 +17,9 @@ import Password from "@/components/settings/Password";
 export default {
   name: "User",
   components: {Credentials, Password},
+  created(){
+    document.title = 'Settings - Arc';
+  }
 }
 </script>
 

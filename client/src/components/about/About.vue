@@ -16,6 +16,9 @@ import Creator from "@/components/about/Creator";
 
 export default {
   name: "About.vue",
-  components: {Arc, Creator}
+  components: {Arc, Creator},
+  created(){
+    document.title = 'About - Arc';
+  }
 }
 </script>

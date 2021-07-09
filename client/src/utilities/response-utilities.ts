@@ -2,7 +2,7 @@ import store from '../store';
 import router from '../router/router';
 import {AxiosResponse} from 'axios';
 import Toasts from '../services/ui/toasts';
-import Loading from "../services/ui/loading";
+import Loading from '../services/ui/loading';
 
 /**
  * Response Utilities for Client

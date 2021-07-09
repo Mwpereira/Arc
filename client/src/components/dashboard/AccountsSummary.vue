@@ -98,6 +98,9 @@ export default {
   },
   mounted() {
     this.loadAccountsSummary();
+  },
+  created(){
+    document.title = 'Accounts Summary - Arc';
   }
 }
 </script>

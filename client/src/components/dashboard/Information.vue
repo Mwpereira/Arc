@@ -146,6 +146,9 @@ export default {
   mounted() {
     this.page = this.$store.getters.homePage;
   },
+  created(){
+    document.title = 'Dashboard - Arc';
+  },
   methods: {
     loadAccountsSummary() {
       this.$store.dispatch("setPanel", "AccountsSummary");
