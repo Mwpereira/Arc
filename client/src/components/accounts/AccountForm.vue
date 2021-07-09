@@ -85,7 +85,7 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "@/components/inputs/BInputWithValidation";
+import BInputWithValidation from "../common/inputs/BInputWithValidation";
 
 export default {
   name: "AccountForm",
