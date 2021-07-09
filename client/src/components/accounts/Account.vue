@@ -29,25 +29,24 @@
               <b-field id="notes" :label="account.notes === '' ? 'Empty' : account.notes" auto-id="field-notes"/>
             </b-field>
 
-            <div class="level-item">
+            <div class="level">
               <button
                   auto-id="button-confirm"
-                  class="button is-block is-fullwidth is-primary is-medium mr-2"
+                  class="button is-block is-fullwidth is-primary is-medium mr-2 my-2"
                   @click="editAccount()"
               >
                 Edit
               </button>
-
               <button
                   auto-id="button-cancel"
-                  class="button is-block is-fullwidth is-warning is-medium mr-2"
+                  class="button is-block is-fullwidth is-warning is-medium mr-2 my-2"
                   @click="exit()"
               >
                 Cancel
               </button>
               <button
                   auto-id="button-delete"
-                  class="button is-block is-fullwidth is-danger is-medium"
+                  class="button is-block is-fullwidth is-danger is-medium my-2"
                   @click="deleteAccount()"
               >
                 Delete

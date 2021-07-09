@@ -99,6 +99,6 @@ export default {
 
 <style scoped>
 .card {
-  height: 438px !important;
+  min-height: 438px !important;
 }
 </style>

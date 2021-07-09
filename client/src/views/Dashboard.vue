@@ -19,25 +19,19 @@ export default {
   name: "Dashboard",
   components: {LeftPanel, Panel},
   created() {
-    if (!this.$store.getters.isLoggedIn) {
-      this.$router.push('/login');
-    } else {
-      this.$store.dispatch('refreshToken').then((validAccessToken) => {
-        if (!validAccessToken) {
-          this.$store.dispatch('logout');
-          this.$router.push('/login');
-        } else {
-          if (this.$store.getters.accounts === null)
-            this.$store.dispatch('getAccounts');
-        }
-      });
-    }
+    this.$store.dispatch('refreshToken').then((validAccessToken) => {
+      if (!validAccessToken) {
+        this.$store.dispatch('logout');
+      } else {
+        if (this.$store.getters.accounts === null)
+          this.$store.dispatch('getAccounts');
+      }
+    });
 
     // const leftPanel = document.getElementById('dashboardLeftPanel');
     // const panel = document.getElementById('dashboardPanel');
     //
     // const resolutionChange = () => {
-    //   console.log("JAMMINGs")
     //   window.addEventListener('resize', () => {
     //     if (window.innerWidth <= 1024){
     //       leftPanel.classList.add('is-hidden');

@@ -2,6 +2,7 @@ import store from '../store';
 import router from '../router/router';
 import {AxiosResponse} from 'axios';
 import Toasts from '../services/ui/toasts';
+import Loading from "../services/ui/loading";
 
 /**
  * Response Utilities for Client
@@ -54,5 +55,4 @@ export const errorProcessor = async (
 
 const checkInvalidTokenError = async (): Promise<void> => {
     await store.dispatch('logout');
-    await router.push('/login');
 };

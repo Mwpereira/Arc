@@ -1,4 +1,4 @@
-import {alpha_dash, confirmed, email, max, min, required,} from 'vee-validate/dist/rules';
+import {alpha_dash, confirmed, email, max, min, required} from 'vee-validate/dist/rules';
 import {extend} from 'vee-validate';
 
 extend('required', {

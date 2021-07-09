@@ -27,6 +27,7 @@ export default class VerifyToken {
                     methodArn
                 );
             } else {
+                console.log('Deny:' + decoded);
                 return JwtUtilities.generatePolicyResponse(
                     decoded.sub,
                     'Deny',

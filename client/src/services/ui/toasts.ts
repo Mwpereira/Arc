@@ -6,7 +6,7 @@ import * as buefy from 'buefy';
 export default class Toasts {
     public static success(message: string) {
         buefy.ToastProgrammatic.open({
-            duration: 2500,
+            duration: 2000,
             message: message !== null ? message : 'Success',
             type: 'is-dark',
             position: 'is-bottom-right',
@@ -15,7 +15,7 @@ export default class Toasts {
 
     public static danger(error: string) {
         buefy.ToastProgrammatic.open({
-            duration: 2500,
+            duration: 2000,
             message: error !== null ? error : 'Error',
             type: 'is-danger',
             position: 'is-bottom-right',

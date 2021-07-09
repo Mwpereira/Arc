@@ -1,6 +1,6 @@
 import {AxiosResponse} from 'axios';
 import {MessageConstants} from '../../utilities/message-constants';
-import AuthUtilities from '../utilities/auth-utilities';
+import AuthUtilities from '../Utilities/auth-utilities';
 
 let response: AxiosResponse;
 let auth: AuthUtilities;

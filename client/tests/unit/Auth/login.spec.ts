@@ -1,7 +1,7 @@
 import {AxiosResponse} from 'axios';
 import {MessageConstants} from '../../utilities/message-constants';
 import * as faker from 'faker';
-import {loginRequest} from '../utilities/common-utilities';
+import {loginRequest} from '../Utilities/common-utilities';
 
 let response: AxiosResponse;
 const email = process.env.TEST_EMAIL;

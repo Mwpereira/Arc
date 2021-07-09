@@ -9,11 +9,6 @@ axios.defaults.withCredentials = true;
  */
 export default class AuthService {
 
-    private static readonly url: any =
-        process.env.VUE_APP_MODE === 'PRODUCTION'
-            ? `https://${process.env.VUE_APP_API}`
-            : `http://${process.env.VUE_APP_API_LOCAL}`;
-
     public static async register(user: object): Promise<AxiosResponse> {
         return axios
             .post(`${this.url}/auth/register`, JSON.stringify({user}))
@@ -37,9 +32,6 @@ export default class AuthService {
     }
 
     public static async logout() {
-        if (process.env.VUE_APP_MODE === 'DEVELOP') {
-            Cookies.remove('accessToken');
-        }
         return axios
             .get(`${this.url}/auth/logout`)
             .then((response: AxiosResponse) => {
@@ -60,4 +52,9 @@ export default class AuthService {
                 return error.response;
             });
     }
+
+    private static readonly url: any =
+        process.env.VUE_APP_MODE === 'PRODUCTION'
+            ? `https://${process.env.VUE_APP_API}`
+            : `http://${process.env.VUE_APP_API_LOCAL}`;
 }

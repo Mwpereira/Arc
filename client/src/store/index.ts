@@ -9,6 +9,7 @@ import {successAuthProcessor, successProcessor} from '../utilities/response-util
 import Toasts from '../services/ui/toasts';
 import Loading from '../services/ui/loading';
 import {AxiosResponse} from 'axios';
+import router from '../router/router';
 
 Vue.use(Vuex);
 
@@ -188,6 +189,7 @@ export default new Vuex.Store({
         async logout({commit}) {
             commit('auth_logout');
             await AuthService.logout();
+            await router.push('/login');
             Toasts.success('Signed Out');
         },
         async register({commit}, user): Promise<boolean> {

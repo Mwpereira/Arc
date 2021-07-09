@@ -42,11 +42,6 @@ logout:
         method: 'get'
         path: 'auth/logout'
         cors: true
-        authorizer:
-          name: verifyToken
-          type: request
-          resultTtlInSeconds: 10
-          indentitySource: method.request.header.Cookie
 
 getAccounts:
   handler: 'src/handlers/user-handler.getAccounts'

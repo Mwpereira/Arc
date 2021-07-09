@@ -61,14 +61,14 @@
                   <button
                       :disabled="invalid || account.category == null"
                       auto-id="button-confirm"
-                      class="button is-block is-fullwidth is-primary is-medium"
+                      class="button is-block is-fullwidth is-primary is-medium my-2 mr-2"
                       type="submit"
                   >
                     {{ editAccount === true ? "Save" : "Add Account" }}
                   </button>
                   <button
                       auto-id="button-cancel"
-                      class="button is-block is-fullwidth is-warning is-medium"
+                      class="button is-block is-fullwidth is-warning is-medium my-2"
                       @click="exit()"
                   >
                     Cancel
@@ -157,7 +157,6 @@ export default {
 
 <style scoped>
 .button {
-  margin: 3px;
   color: white;
 }
 

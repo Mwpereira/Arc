@@ -8,11 +8,6 @@ axios.defaults.withCredentials = true;
  */
 export default class UserService {
 
-    private static readonly url: any =
-        process.env.VUE_APP_MODE === 'PRODUCTION'
-            ? `https://${process.env.VUE_APP_API}`
-            : `http://${process.env.VUE_APP_API_LOCAL}`;
-
     public static async getAccounts(): Promise<AxiosResponse> {
         return await axios
             .get(`${this.url}/user/accounts`)
@@ -91,4 +86,9 @@ export default class UserService {
                 return errorProcessor(error.response);
             });
     }
+
+    private static readonly url: any =
+        process.env.VUE_APP_MODE === 'PRODUCTION'
+            ? `https://${process.env.VUE_APP_API}`
+            : `http://${process.env.VUE_APP_API_LOCAL}`;
 }

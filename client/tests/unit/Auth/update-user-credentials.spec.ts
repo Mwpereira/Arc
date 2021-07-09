@@ -1,7 +1,7 @@
 import {AxiosResponse} from 'axios';
-import {updateCredentials, updatePassword} from '../utilities/common-utilities';
+import {updateCredentials, updatePassword} from '../Utilities/common-utilities';
 import {MessageConstants} from '../../utilities/message-constants';
-import AuthUtilities from '../utilities/auth-utilities';
+import AuthUtilities from '../Utilities/auth-utilities';
 import * as faker from 'faker';
 
 let response: AxiosResponse;

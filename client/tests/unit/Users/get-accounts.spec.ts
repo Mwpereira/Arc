@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from 'axios';
 import {MessageConstants} from '../../utilities/message-constants';
-import AuthUtilities from '../utilities/auth-utilities';
-import {getAccounts} from '../utilities/common-utilities';
+import AuthUtilities from '../Utilities/auth-utilities';
+import {getAccounts} from '../Utilities/common-utilities';
 
 axios.defaults.withCredentials = true;
 
