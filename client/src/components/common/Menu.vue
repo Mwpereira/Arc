@@ -33,7 +33,6 @@ export default {
     },
     async logout() {
       await this.$store.dispatch('logout');
-      await this.$router.push(`/login`);
     },
     settings() {
       this.$store.commit('setPanel', 'User');
