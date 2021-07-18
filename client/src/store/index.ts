@@ -48,17 +48,13 @@ export default new Vuex.Store({
         addAccount(state, data) {
             data.account.id = data.id;
             if (state.accounts) {
-                // @ts-ignore
                 state.accounts[data.id] = data.account;
             } else {
-                // @ts-ignore
                 state.accounts = {[data.id]: data.account};
             }
         },
         deleteAccount(state, id) {
-            // @ts-ignore
             delete state.accounts[id];
-            // @ts-ignore
             if (Object.keys(state.accounts).length === 0) {
                 state.accounts = null;
             }
@@ -66,10 +62,8 @@ export default new Vuex.Store({
         getHomePage(state, username) {
             if (localStorage.getItem(`${username}::homePage`) === null) {
                 localStorage.setItem(`${username}::homePage`, 'Dashboard');
-                // @ts-ignore
                 state.homePage = 'Dashboard';
             } else {
-                // @ts-ignore
                 state.homePage = localStorage.getItem(`${username}::homePage`);
             }
         },
@@ -88,8 +82,7 @@ export default new Vuex.Store({
             localStorage.setItem(`${data.username}::homePage`, data.homePage);
         },
         setLastLogin(state, lastLogin) {
-            // @ts-ignore
-            state.lastLogin = new Date(lastLogin);
+            state.lastLogin = lastLogin;
         },
         setPanel(state, panel) {
             state.panel = panel;
@@ -101,7 +94,6 @@ export default new Vuex.Store({
             state.passwordStrength = passwordStrength;
         },
         updateAccount(state, data) {
-            // @ts-ignore
             state.accounts[data.index] = data.account;
         },
         updateCredentials(state, credentials) {

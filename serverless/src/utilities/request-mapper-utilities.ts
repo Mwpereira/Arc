@@ -1,4 +1,5 @@
 import {APIGatewayEvent} from 'aws-lambda';
+import moment from 'moment';
 import * as uuid from 'uuid';
 import validator from 'validator';
 import {Accounts} from '../interfaces/accounts';
@@ -7,7 +8,7 @@ import {LoginRequest} from '../interfaces/login-request';
 import {RegisterRequest} from '../interfaces/register-request';
 import {UpdateCredentialsRequest} from '../interfaces/update-credentials-request';
 import {UpdateEmailRequest} from '../interfaces/update-email-request';
-import {UpdateLastloginRequest} from '../interfaces/update-lastlogin-request';
+import {UpdateLastLoginRequest} from '../interfaces/update-last-login-request';
 import {UpdatePasswordRequest} from '../interfaces/update-password-request';
 import {UpdateUsernameRequest} from '../interfaces/update-username-request';
 import BcryptUtilities from './bcrypt-utilities';
@@ -61,7 +62,7 @@ export default class RequestMapperUtilities {
             password: _password,
             passwordStrength: this.getPasswordStrength(data.password),
             accounts: '',
-            lastLogin: Date.now(),
+            lastLogin: moment().format('MMMM Do YYYY, h:mm:ss a'),
         };
     }
 
@@ -195,10 +196,10 @@ export default class RequestMapperUtilities {
      * @param _id
      * @return update last login request
      */
-    static mapUpdateLastLoginRequest(_id: string): UpdateLastloginRequest {
+    static mapUpdateLastLoginRequest(_id: string): UpdateLastLoginRequest {
         return {
             id: _id,
-            lastLogin: Date.now(),
+            lastLogin: moment().format('MMMM Do YYYY, h:mm:ss a'),
         };
     }
 

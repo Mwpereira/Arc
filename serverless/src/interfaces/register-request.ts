@@ -5,5 +5,5 @@ export interface RegisterRequest {
     password: string;
     passwordStrength: string;
     accounts: string;
-    lastLogin: number;
+    lastLogin: string;
 }
