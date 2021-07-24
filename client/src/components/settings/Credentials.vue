@@ -57,7 +57,9 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "../common/inputs/BInputWithValidation";
+import BInputWithValidation from "@/components/common/buefy-vee-validate/BInputWithValidation";
+import BuefyService from "@/services/buefy-service";
+import {Panel} from "@/enums/panel";
 
 export default {
   name: "Credentials",
@@ -75,20 +77,24 @@ export default {
     }
   },
   methods: {
-    deleteUser() {
-      this.$store.dispatch("deleteUser");
-      this.$store.dispatch("logout");
-      this.$router.push(`/home`);
+    async deleteUser() {
+      BuefyService.startLoading();
+      if (await this.$store.dispatch("deleteUser")) {
+        await this.$store.dispatch("logout");
+        await this.$router.push(`/home`);
+      }
+      BuefyService.stopLoading();
     },
     loadCredentials() {
       this.placeHolder.email = this.$store.getters.email;
       this.placeHolder.username = this.$store.getters.username;
     },
     async updateCredentials() {
-      const result = await this.$store.dispatch('updateCredentials', this.credentials);
-      if (result) {
-        await this.$store.dispatch("setPanel", "Information");
+      BuefyService.startLoading();
+      if (await this.$store.dispatch('updateCredentials', this.credentials)) {
+        await this.$store.dispatch("setPanel", Panel.INFORMATION);
       }
+      BuefyService.stopLoading();
     }
   },
   mounted() {

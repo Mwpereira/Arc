@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import {Panel} from "@/enums/panel";
+
 export default {
   name: "Accounts",
   data: () => {
@@ -75,11 +77,11 @@ export default {
   },
   methods: {
     addAccount() {
-      this.$store.dispatch('setPanel', 'AddAccount');
+      this.$store.dispatch('setPanel', Panel.ADD_ACCOUNT);
     },
     loadAccount(account) {
       this.$store.dispatch('setAccount', account);
-      this.$store.dispatch('setPanel', 'Account');
+      this.$store.dispatch('setPanel', Panel.ACCOUNT);
     },
     loadIcon(category) {
       return this.categoryType[`${category}`];
@@ -88,7 +90,7 @@ export default {
       return this.pack[`${category}`];
     }
   },
-  created(){
+  created() {
     document.title = 'Accounts - Arc';
   }
 }

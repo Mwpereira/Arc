@@ -146,7 +146,7 @@ export default {
   mounted() {
     this.page = this.$store.getters.homePage;
   },
-  created(){
+  created() {
     document.title = 'Dashboard - Arc';
   },
   methods: {

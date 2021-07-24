@@ -59,7 +59,8 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "../common/inputs/BInputWithValidation";
+import BInputWithValidation from "@/components/common/buefy-vee-validate/BInputWithValidation";
+import BuefyService from "@/services/buefy-service";
 
 export default {
   name: "Password",
@@ -74,10 +75,11 @@ export default {
   },
   methods: {
     async updatePassword() {
-      const result = await this.$store.dispatch('updatePassword', this.passwords);
-      if (result) {
+      BuefyService.startLoading();
+      if (await this.$store.dispatch('updatePassword', this.passwords)) {
         await this.$store.dispatch("clearPanel");
       }
+      BuefyService.stopLoading();
     }
   }
 }

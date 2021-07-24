@@ -35,7 +35,7 @@ refresh:
           indentitySource: method.request.header.Cookie
 
 logout:
-  handler: 'src/handlers/jwt-handler.logout'
+  handler: 'src/handlers/auth-handler.logout'
   description: "Expires JWT Token"
   events:
     - http:

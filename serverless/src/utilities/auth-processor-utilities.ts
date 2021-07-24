@@ -12,14 +12,14 @@ export default class AuthTable {
     /**
      * Gets if the email already exists in the table
      *
-     * @param _email
+     * @param email
      * @returns boolean if email already exists
      */
-    static async getEmailExists(_email: string): Promise<boolean> {
+    static async getEmailExists(email: string): Promise<boolean> {
         return arcTable
             .scan()
             .where('email')
-            .eq(_email.toLowerCase())
+            .eq(email.toLowerCase())
             .attributes(['id'])
             .exec()
             .then((result: any) => {
@@ -33,14 +33,14 @@ export default class AuthTable {
     /**
      * Gets if the user already exists in the table
      *
-     * @param _user
+     * @param user
      * @returns user id
      */
-    static getUserExists(_user: string): any {
+    static getUserExists(user: string): any {
         return arcTable
             .scan()
-            .where(validator.isEmail(_user) ? 'email' : 'username')
-            .eq(_user.toLowerCase())
+            .where(validator.isEmail(user) ? 'email' : 'username')
+            .eq(user.toLowerCase())
             .attributes(['id'])
             .exec()
             .then((result: any) => {
@@ -58,13 +58,13 @@ export default class AuthTable {
     /**
      * Gets user's password
      *
-     * @param _id
+     * @param id
      * @returns user password
      */
-    static getUserPasswordWithId(_id: string): string {
+    static getUserPasswordWithId(id: string): string {
         return arcTable
             .query('id')
-            .eq(_id)
+            .eq(id)
             .attributes(['password'])
             .exec()
             .then((result: any) => {
@@ -79,14 +79,14 @@ export default class AuthTable {
     /**
      * Gets user's password
      *
-     * @param _user
+     * @param user
      * @returns user password
      */
-    static getUserPasswordWithUser(_user: string): any {
+    static getUserPasswordWithUser(user: string): any {
         return arcTable
             .scan()
-            .where(validator.isEmail(_user) ? 'email' : 'username')
-            .eq(_user)
+            .where(validator.isEmail(user) ? 'email' : 'username')
+            .eq(user)
             .attributes(['id', 'password'])
             .exec()
             .then((result: any) => {
@@ -101,14 +101,14 @@ export default class AuthTable {
     /**
      * Gets User Data
      *
-     * @param _id
+     * @param id
      * @returns user id and key
      */
-    static getUserData(_id: string): any {
+    static getUserData(id: string): any {
         return arcTable
             .query()
             .where('id')
-            .eq(_id)
+            .eq(id)
             .attributes(['id', 'username', 'email', 'passwordStrength', 'lastLogin'])
             .exec()
             .then((result: any) => {
@@ -123,14 +123,14 @@ export default class AuthTable {
     /**
      * Updates User's Email
      *
-     * @param _id
-     * @param _email
+     * @param id
+     * @param email
      * @return update user status
      */
-    static updateEmail(_id: string, _email: string): Promise<boolean> {
+    static updateEmail(id: string, email: string): Promise<boolean> {
         const mappedObject = RequestMapperUtilities.mapUpdateEmailRequest(
-            _id,
-            _email
+            id,
+            email
         );
         return arcTable
             .update(
@@ -153,14 +153,14 @@ export default class AuthTable {
     /**
      * Updates User's Username
      *
-     * @param _id
-     * @param _username
+     * @param id
+     * @param username
      * @return update user status
      */
-    static updateUsername(_id: string, _username: string): Promise<boolean> {
+    static updateUsername(id: string, username: string): Promise<boolean> {
         const mappedObject = RequestMapperUtilities.mapUpdateUsernameRequest(
-            _id,
-            _username
+            id,
+            username
         );
         return arcTable
             .update(
@@ -183,14 +183,14 @@ export default class AuthTable {
     /**
      * Updates User's Password
      *
-     * @param _id
-     * @param _password
+     * @param id
+     * @param password
      * @return update user status
      */
-    static async updatePassword(_id: string, _password: string): Promise<string> {
+    static async updatePassword(id: string, password: string): Promise<string> {
         const mappedObject = await RequestMapperUtilities.mapUpdatePasswordRequest(
-            _id,
-            _password
+            id,
+            password
         );
 
         return arcTable
@@ -215,11 +215,11 @@ export default class AuthTable {
     /**
      * Updates User's Last Login
      *
-     * @param _id
+     * @param id
      * @return update auth status
      */
-    static updateLastLogin(_id: string): Promise<boolean> {
-        const mappedObject = RequestMapperUtilities.mapUpdateLastLoginRequest(_id);
+    static updateLastLogin(id: string): Promise<boolean> {
+        const mappedObject = RequestMapperUtilities.mapUpdateLastLoginRequest(id);
         return arcTable
             .update(
                 {

@@ -60,6 +60,9 @@
 </template>
 
 <script>
+import {Panel} from "@/enums/panel";
+import BuefyService from "@/services/buefy-service";
+
 export default {
   name: "Account",
   computed: {
@@ -69,17 +72,22 @@ export default {
   },
   methods: {
     async deleteAccount() {
-      await this.$store.dispatch("deleteAccount", this.account);
-      this.exit();
+      BuefyService.startLoading();
+
+      if (await this.$store.dispatch("deleteAccount", this.account)) {
+        this.exit();
+      }
+
+      BuefyService.stopLoading();
     },
     editAccount() {
-      this.$store.dispatch("setPanel", "EditAccount");
+      this.$store.dispatch("setPanel", Panel.EDIT_ACCOUNT);
     },
     exit() {
-      this.$store.dispatch("setPanel", "Accounts");
+      this.$store.dispatch("setPanel", Panel.ACCOUNTS);
     },
   },
-  created(){
+  created() {
     document.title = 'Account - Arc';
   }
 };

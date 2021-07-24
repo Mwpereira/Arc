@@ -2,12 +2,14 @@ import assert from 'assert';
 import * as uuid from 'uuid';
 import * as validator from 'validator';
 import {Category} from '../enums/category';
+import {AuthorizeUserRequest} from '../interfaces/authorize-user-request';
+import {RegisterRequest} from '../interfaces/register-request';
 
 export default class PayloadValidator {
     /**
      * Validates Register Request
      */
-    static validateRegister(request: any): any {
+    static validateRegister(request: any): RegisterRequest {
         this.validateEmail(request.email);
         this.validateUsername(request.username);
         this.validatePassword(request.password);
@@ -17,7 +19,7 @@ export default class PayloadValidator {
     /**
      * Validates Login Request
      */
-    static validateLogin(request: any): any {
+    static validateLogin(request: any): AuthorizeUserRequest {
         assert(request.username);
         assert(request.password);
         return request;

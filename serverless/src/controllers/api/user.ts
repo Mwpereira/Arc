@@ -1,15 +1,15 @@
 import _ from 'lodash';
-import {MessageConstants} from '../../../constants/message-constants';
-import {Response} from '../../../interfaces/response';
-import AccountsTable from '../../../utilities/accounts-processor-utilities';
-import PayloadValidator from '../../../utilities/payload-validator-utilities';
-import RequestMapperUtilities from '../../../utilities/request-mapper-utilities';
-import MessageUtil from '../../../utilities/response-message-utilities';
+import {MessageConstants} from '../../constants/message-constants';
+import {Response} from '../../interfaces/response';
+import AccountsTable from '../../utilities/accounts-processor-utilities';
+import PayloadValidator from '../../utilities/payload-validator-utilities';
+import RequestMapperUtilities from '../../utilities/request-mapper-utilities';
+import MessageUtil from '../../utilities/response-message-utilities';
 
 /**
  * Contains method for receiving User's Accounts
  */
-export default class Accounts {
+export default class User {
     static async getAccounts(event: any): Promise<Response> {
         try {
             const id = RequestMapperUtilities.getId(event);

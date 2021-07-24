@@ -10,20 +10,20 @@ export default class ArcTable {
     /**
      * Create User Account
      *
-     * @param _user
+     * @param user
      * @return status
      */
-    static createUser(_user: any): boolean {
+    static createUser(user: any): boolean {
         return arcTable
             .create({
-                id: _user.id,
-                email: _user.email,
-                username: _user.username,
-                password: _user.password,
-                passwordStrength: _user.passwordStrength,
-                accounts: _user.accounts,
-                lastLogin: _user.lastLogin,
-                createdAt: _user.lastLogin,
+                id: user.id,
+                email: user.email,
+                username: user.username,
+                password: user.password,
+                passwordStrength: user.passwordStrength,
+                accounts: user.accounts,
+                lastLogin: user.lastLogin,
+                createdAt: user.lastLogin,
             })
             .then(() => {
                 return true;
@@ -37,12 +37,12 @@ export default class ArcTable {
     /**
      * Deletes User
      *
-     * @param _id
+     * @param id
      * @return status
      */
-    static deleteUser(_id: string): boolean {
+    static deleteUser(id: string): boolean {
         return arcTable
-            .delete({id: _id})
+            .delete({id})
             .then(() => {
                 return true;
             })

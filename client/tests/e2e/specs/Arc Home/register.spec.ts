@@ -1,6 +1,6 @@
 import * as faker from 'faker';
-import {clickOff, getByAutoId, responseTimeout, Selectors, startup} from '../../support/support';
 import {MessageConstants} from '../../../utilities/message-constants';
+import {clickOff, getByAutoId, responseTimeout, Selectors, startup} from '../../support/support';
 
 describe('Register.vue', () => {
     beforeEach(() => {

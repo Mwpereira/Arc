@@ -77,8 +77,10 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "../components/common/inputs/BInputWithValidation";
-import BCheckboxesWithValidation from "../components/common/inputs/BCheckboxesWithValidation";
+import BInputWithValidation from "@/components/common/buefy-vee-validate/BInputWithValidation";
+import BCheckboxesWithValidation from "@/components/common/buefy-vee-validate/BCheckboxesWithValidation";
+import BuefyService from "@/services/buefy-service";
+import {Panel} from "@/enums/panel";
 
 export default {
   name: "Login",
@@ -103,19 +105,18 @@ export default {
     pageSwitch(page) {
       this.$router.push(`/${page}`);
     },
-    login() {
-      this.$store.dispatch('login', {user: this.user, rememberMe: this.rememberMe})
-          .then(async (success) => {
-            if (success) {
-              this.pageSwitch(`dashboard`);
+    async login() {
+      BuefyService.startLoading();
+      if (await this.$store.dispatch('login', {user: this.user, rememberMe: this.rememberMe})) {
+        this.pageSwitch(`dashboard`);
 
-              if (this.$store.getters.homePage === 'Accounts') {
-                await this.$store.dispatch('setPanel', 'Accounts');
-              } else {
-                await this.$store.dispatch('setPanel', 'Information');
-              }
-            }
-          });
+        if (this.$store.getters.homePage === Panel.ACCOUNTS) {
+          await this.$store.dispatch('setPanel', Panel.ACCOUNTS);
+        } else {
+          await this.$store.dispatch('setPanel', Panel.INFORMATION);
+        }
+      }
+      BuefyService.stopLoading();
     }
   },
   mounted() {

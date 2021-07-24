@@ -1,3 +1,6 @@
+/**
+ * Response Header
+ */
 export const responseHeader: object = {
     'Accept-Encoding': 'gzip, compress, br',
     'Access-Control-Allow-Credentials': true,

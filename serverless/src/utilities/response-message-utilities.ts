@@ -40,7 +40,6 @@ export class Result {
         result.headers['Set-Cookie'] = new CookieUtilities(
             payload
         ).generateCookie();
-        console.log(result.headers['Set-Cookie']);
 
         return result;
     }

@@ -85,7 +85,9 @@
 
 <script>
 import {ValidationObserver} from "vee-validate";
-import BInputWithValidation from "../common/inputs/BInputWithValidation";
+import {Panel} from "@/enums/panel";
+import BInputWithValidation from "@/components/common/buefy-vee-validate/BInputWithValidation";
+import BuefyService from "@/services/buefy-service";
 
 export default {
   name: "AccountForm",
@@ -104,14 +106,18 @@ export default {
   },
   computed: {
     editAccount() {
-      return this.$store.getters.panel === "EditAccount";
+      return this.$store.getters.panel === Panel.EDIT_ACCOUNT;
     }
   },
   methods: {
     async addAccount() {
+      BuefyService.startLoading();
+
       if (await this.$store.dispatch("addAccount", this.account)) {
-        await this.$store.dispatch("setPanel", "Accounts");
+        await this.$store.dispatch("setPanel", Panel.ACCOUNTS);
       }
+
+      BuefyService.stopLoading();
     },
     generatePassword() {
       let result = '';
@@ -124,7 +130,7 @@ export default {
     },
     exit() {
       if (this.editAccount) {
-        this.$store.dispatch('setPanel', 'Account');
+        this.$store.dispatch('setPanel', Panel.ACCOUNT);
       } else {
         this.$store.dispatch("clearPanel");
       }
@@ -133,22 +139,24 @@ export default {
       this.account = {...this.$store.getters.accountData};
     },
     async updateAccount() {
+      BuefyService.startLoading();
       if (await this.$store.dispatch("updateAccount", this.account)) {
         await this.$store.dispatch('setAccount', this.account.id);
-        await this.$store.dispatch('setPanel', 'Account');
+        await this.$store.dispatch('setPanel', Panel.ACCOUNT);
       }
+      BuefyService.stopLoading();
     },
     submit() {
-      if (this.$store.getters.panel === "AddAccount") {
+      if (this.$store.getters.panel === Panel.ADD_ACCOUNT) {
         this.addAccount();
       }
-      if (this.$store.getters.panel === "EditAccount") {
+      if (this.$store.getters.panel === Panel.EDIT_ACCOUNT) {
         this.updateAccount();
       }
     }
   },
   mounted() {
-    if (this.$store.getters.panel === "EditAccount") {
+    if (this.$store.getters.panel === Panel.EDIT_ACCOUNT) {
       this.loadAccount();
     }
   }

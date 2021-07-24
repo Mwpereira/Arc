@@ -16,20 +16,22 @@
 </template>
 <script>
 
+import {Panel} from "@/enums/panel";
+
 export default {
   name: "Menu",
   methods: {
     about() {
-      this.$store.commit('setPanel', 'About');
+      this.$store.commit('setPanel', Panel.ABOUT);
     },
     accounts() {
-      this.$store.commit('setPanel', 'Accounts');
+      this.$store.commit('setPanel', Panel.ACCOUNTS);
     },
     addAccount() {
-      this.$store.commit('setPanel', 'AddAccount');
+      this.$store.commit('setPanel', Panel.ADD_ACCOUNT);
     },
     exit() {
-      this.$store.dispatch("setPanel", "Information");
+      this.$store.dispatch("setPanel", Panel.INFORMATION);
     },
     async logout() {
       await this.$store.dispatch('logout');

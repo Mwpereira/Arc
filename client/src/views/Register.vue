@@ -91,7 +91,8 @@
 
 <script>
 import {ValidationObserver} from 'vee-validate';
-import BInputWithValidation from "../components/common/inputs/BInputWithValidation";
+import BInputWithValidation from "@/components/common/buefy-vee-validate/BInputWithValidation";
+import BuefyService from "@/services/buefy-service";
 
 export default {
   name: 'Register',
@@ -117,12 +118,11 @@ export default {
       this.$router.push(`/${page}`);
     },
     async register() {
-      this.$store.dispatch('register', this.user)
-          .then((result) => {
-            if (result) {
-              this.$router.push('/login')
-            }
-          });
+      BuefyService.startLoading();
+      if (await this.$store.dispatch('register', this.user)) {
+        await this.$router.push('/login')
+      }
+      BuefyService.stopLoading();
     }
   }
 };

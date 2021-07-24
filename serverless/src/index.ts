@@ -1,6 +1,5 @@
 /**
- * Launch Serverless App
+ * Serverless App
  *
  * @author Michael W. Pereira
  */
-require('dotenv').config();

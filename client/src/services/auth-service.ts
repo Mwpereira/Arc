@@ -1,6 +1,5 @@
 import axios, {AxiosResponse} from 'axios';
-import * as Cookies from 'js-cookie';
-import {errorProcessor} from '../../utilities/response-utilities';
+import {errorProcessor} from '../utilities/response-utilities';
 
 axios.defaults.withCredentials = true;
 

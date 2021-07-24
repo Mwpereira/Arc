@@ -99,7 +99,7 @@ export default {
   mounted() {
     this.loadAccountsSummary();
   },
-  created(){
+  created() {
     document.title = 'Accounts Summary - Arc';
   }
 }

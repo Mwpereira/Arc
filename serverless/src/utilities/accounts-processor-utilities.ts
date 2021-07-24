@@ -11,14 +11,14 @@ export default class AccountsTable {
     /**
      * Gets User's Accounts
      *
-     * @param _id
+     * @param id
      * @returns user accounts
      */
-    static async getAccounts(_id: string): Promise<any> {
+    static async getAccounts(id: string): Promise<any> {
         return arcTable
             .query()
             .where('id')
-            .eq(_id)
+            .eq(id)
             .attributes(['accounts'])
             .exec()
             .then((result: any) => {
@@ -38,29 +38,29 @@ export default class AccountsTable {
     /**
      * Add User's Account
      *
-     * @param _id
-     * @param _accounts
-     * @param _account
+     * @param id
+     * @param accounts
+     * @param account
      * @return add user account status
      */
     static async addAccount(
-        _id: string,
-        _accounts: object,
-        _account: object
+        id: string,
+        accounts: object,
+        account: object
     ): Promise<string> {
         const mappedObject = await RequestMapperUtilities.mapAddAccountRequest(
-            _id,
-            _account
+            id,
+            account
         );
-        if (_accounts) {
-            _accounts[`${mappedObject.id}`] = mappedObject;
+        if (account) {
+            account[`${mappedObject.id}`] = mappedObject;
         } else {
-            _accounts = {[mappedObject.id]: mappedObject};
+            account = {[mappedObject.id]: mappedObject};
         }
         return arcTable
             .update({
-                id: _id,
-                accounts: JSON.stringify(_accounts),
+                id,
+                accounts: JSON.stringify(accounts),
             })
             .then(() => {
                 return mappedObject.id;
@@ -74,20 +74,20 @@ export default class AccountsTable {
     /**
      * Update User's Account
      *
-     * @param _id
-     * @param _accounts
+     * @param id
+     * @param accounts
      * @return update account status
      */
-    static async updateAccount(_id: string, _accounts: object): Promise<boolean> {
+    static async updateAccount(id: string, accounts: object): Promise<boolean> {
         const mappedObject = await RequestMapperUtilities.mapUpdateAccountRequest(
-            _id,
-            _accounts
+            id,
+            accounts
         );
         return arcTable
             .update({
-                id: _id,
+                id,
                 accounts:
-                    Object.keys(_accounts).length === 0
+                    Object.keys(accounts).length === 0
                         ? ''
                         : JSON.stringify(mappedObject.accounts),
             })

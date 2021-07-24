@@ -4,10 +4,9 @@ import Vuex from 'vuex';
 import {AxiosResponse} from 'axios';
 import createPersistedState from 'vuex-persistedstate';
 import router from '../router/router';
-import AuthService from '../services/auth/auth-service';
-import Loading from '../services/ui/loading';
-import Toasts from '../services/ui/toasts';
-import UserService from '../services/user/user-service';
+import AuthService from '../services/auth-service';
+import BuefyService from '../services/buefy-service';
+import UserService from '../services/user-service';
 import {loadAccount} from '../utilities/common-utilities';
 import {successAuthProcessor, successProcessor} from '../utilities/response-utilities';
 
@@ -107,45 +106,43 @@ export default new Vuex.Store({
     },
     actions: {
         async addAccount({commit, getters}, account) {
-            Loading.start();
-
             response = await UserService.addAccount(account);
-
-            Loading.stop();
 
             if (successProcessor(response)) {
                 commit('addAccount', {id: response.data.id, account});
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
 
                 return true;
             }
+
             return false;
         },
         clearPanel({commit}) {
             commit('setAccount', '');
             commit('setPanel', 'Information');
         },
-        async deleteAccount({commit, getters}, account) {
-            Loading.start();
-
+        async deleteAccount({commit, getters}, account): Promise<boolean> {
             response = await UserService.deleteAccount(account);
-
-            Loading.stop();
 
             if (successProcessor(response)) {
                 commit('deleteAccount', response.data.index);
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
+                return true;
             }
+
+            return false;
         },
-        async deleteUser({getters}) {
+        async deleteUser({getters}): Promise<boolean> {
             const user = {
                 email: getters.email,
                 username: getters.username,
             };
-            await UserService.deleteUser(user);
+
+            return successProcessor(await UserService.deleteUser(user));
         },
         async getAccounts({commit}) {
             response = await UserService.getAccounts();
+
             if (successProcessor(response)) {
                 if (response.data.accounts !== undefined) {
                     commit('setAccounts', response.data.accounts);
@@ -153,11 +150,7 @@ export default new Vuex.Store({
             }
         },
         async login({commit}, {user, rememberMe}): Promise<boolean> {
-            Loading.start();
-
             response = await AuthService.login(user);
-
-            Loading.stop();
 
             if (successAuthProcessor(response)) {
                 if (rememberMe) {
@@ -173,7 +166,8 @@ export default new Vuex.Store({
                 commit('setLastLogin', response.data.lastLogin);
                 commit('setPasswordStrength', response.data.passwordStrength);
 
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
+
                 return true;
             }
             return false;
@@ -182,17 +176,13 @@ export default new Vuex.Store({
             commit('auth_logout');
             await router.push('/login');
             await AuthService.logout();
-            Toasts.success('Signed Out');
+            BuefyService.successToast('Signed Out');
         },
         async register({commit}, user): Promise<boolean> {
-            Loading.start();
-
             response = await AuthService.register(user);
 
-            Loading.stop();
-
             if (successAuthProcessor(response)) {
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
                 return true;
             }
             return false;
@@ -210,51 +200,38 @@ export default new Vuex.Store({
             commit('setPanel', panel);
         },
         async refreshToken() {
-            response = await AuthService.refreshToken();
-            return successProcessor(response);
+            return successProcessor(await AuthService.refreshToken());
         },
         async updateAccount({commit}, account) {
-            Loading.start();
-
             response = await UserService.updateAccount(account);
-
-            Loading.stop();
 
             if (successProcessor(response)) {
                 commit('updateAccount', {
                     account,
                     index: response.data.index,
                 });
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
 
                 return true;
             }
             return false;
         },
         async updateCredentials({commit}, credentials): Promise<any> {
-            Loading.start();
-
             response = await UserService.updateCredentials(credentials);
-
-            Loading.stop();
 
             if (successProcessor(response)) {
                 commit('updateCredentials', credentials);
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
                 return true;
             }
             return false;
         },
         async updatePassword({commit}, passwords): Promise<any> {
-            Loading.start();
-
             response = await UserService.updatePassword(passwords);
-
-            Loading.stop();
 
             if (successProcessor(response)) {
                 commit('setPasswordStrength', response.data.passwordStrength);
-                Toasts.success(response.data.message);
+                BuefyService.successToast(response.data.message);
                 return true;
             }
             return false;
