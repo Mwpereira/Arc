@@ -22,5 +22,5 @@ export const updatePassword: Handler = async (event) => {
 };
 
 export const deleteUser: Handler = async (event) => {
-    return await Auth.delete(event);
+    return await Auth.deleteUser(event);
 };

@@ -1,5 +1,4 @@
 import {MessageConstants} from '../../constants/message-constants';
-import {RegisterRequest} from '../../interfaces/register-request';
 import {Response} from '../../interfaces/response';
 import ArcTable from '../../utilities/arc-processor-utilities';
 import AuthTable from '../../utilities/auth-processor-utilities';
@@ -90,12 +89,11 @@ export default class Auth {
 
             if (!(await AuthTable.getEmailExists(user.email))) {
                 if (!(await AuthTable.getUserExists(user.username))) {
-                    const payload: RegisterRequest = await RequestMapperUtilities.mapRegisterRequest(
+                    const payload = await RequestMapperUtilities.mapRegisterRequest(
                         user
                     );
 
                     if (await ArcTable.createUser(payload)) {
-                        console.log('User Created');
                         return MessageUtil.success(201, MessageConstants.USER_CREATED);
                     } else {
                         return MessageUtil.error(500, MessageConstants.DATABASE_ERROR);
@@ -116,7 +114,7 @@ export default class Auth {
     /**
      * Contains method for Deleting a User
      */
-    static async delete(event: any): Promise<Response> {
+    static async deleteUser(event: any): Promise<Response> {
         try {
             const id = RequestMapperUtilities.getId(event);
             const data = PayloadValidator.validateDeleteUser(
