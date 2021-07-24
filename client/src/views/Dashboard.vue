@@ -27,23 +27,6 @@ export default {
           this.$store.dispatch('getAccounts');
       }
     });
-
-    // const leftPanel = document.getElementById('dashboardLeftPanel');
-    // const panel = document.getElementById('dashboardPanel');
-    //
-    // const resolutionChange = () => {
-    //   window.addEventListener('resize', () => {
-    //     if (window.innerWidth <= 1024){
-    //       leftPanel.classList.add('is-hidden');
-    //       panel.classList.add('is-12');
-    //     } else {
-    //       leftPanel.classList.remove('is-hidden');
-    //       panel.classList.remove('is-12');
-    //       panel.classList.add('is-10');
-    //     }
-    //   });
-    // };
-    // resolutionChange();
   },
 }
 </script>

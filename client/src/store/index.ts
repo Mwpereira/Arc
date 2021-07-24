@@ -140,7 +140,7 @@ export default new Vuex.Store({
 
             return successProcessor(await UserService.deleteUser(user));
         },
-        async getAccounts({commit}) {
+        async getAccounts({commit}): Promise<void> {
             response = await UserService.getAccounts();
 
             if (successProcessor(response)) {
@@ -172,7 +172,7 @@ export default new Vuex.Store({
             }
             return false;
         },
-        async logout({commit}) {
+        async logout({commit}): Promise<void> {
             commit('auth_logout');
             await router.push('/login');
             await AuthService.logout();
@@ -187,19 +187,19 @@ export default new Vuex.Store({
             }
             return false;
         },
-        setAccount({commit}, account) {
+        setAccount({commit}, account): void {
             commit('setAccount', account);
         },
-        setHomePage({commit, getters}, homePage) {
+        setHomePage({commit, getters}, homePage): void {
             commit('setHomePage', {
                 homePage,
                 username: getters.username,
             });
         },
-        setPanel({commit}, panel) {
+        setPanel({commit}, panel): void {
             commit('setPanel', panel);
         },
-        async refreshToken() {
+        async refreshToken(): Promise<boolean> {
             return successProcessor(await AuthService.refreshToken());
         },
         async updateAccount({commit}, account) {
@@ -216,7 +216,7 @@ export default new Vuex.Store({
             }
             return false;
         },
-        async updateCredentials({commit}, credentials): Promise<any> {
+        async updateCredentials({commit}, credentials): Promise<boolean> {
             response = await UserService.updateCredentials(credentials);
 
             if (successProcessor(response)) {
@@ -226,7 +226,7 @@ export default new Vuex.Store({
             }
             return false;
         },
-        async updatePassword({commit}, passwords): Promise<any> {
+        async updatePassword({commit}, passwords): Promise<boolean> {
             response = await UserService.updatePassword(passwords);
 
             if (successProcessor(response)) {
