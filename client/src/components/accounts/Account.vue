@@ -75,7 +75,6 @@ export default {
       BuefyService.startLoading();
 
       if (await this.$store.dispatch("deleteAccount", this.account)) {
-        await this.$store.dispatch('setAccount', null);
         this.exit();
       }
 
