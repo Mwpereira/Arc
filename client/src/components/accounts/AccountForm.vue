@@ -114,6 +114,7 @@ export default {
       BuefyService.startLoading();
 
       if (await this.$store.dispatch("addAccount", this.account)) {
+        await this.$router.push('/accounts');
         await this.$store.dispatch("setPanel", Panel.ACCOUNTS);
       }
 
@@ -130,8 +131,10 @@ export default {
     },
     exit() {
       if (this.editAccount) {
+        this.$router.push('/accounts/viewAccount');
         this.$store.dispatch('setPanel', Panel.ACCOUNT);
       } else {
+        this.$router.push('/accounts');
         this.$store.dispatch("clearPanel");
       }
     },
