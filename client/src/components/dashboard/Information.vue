@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import {Panel} from "@/enums/panel";
+
 export default {
   name: "Information",
   data() {
@@ -151,7 +153,8 @@ export default {
   },
   methods: {
     loadAccountsSummary() {
-      this.$store.dispatch("setPanel", "AccountsSummary");
+      this.$router.push('/dashboard/accountsSummary');
+      this.$store.dispatch("setPanel", Panel.ACCOUNTS_SUMMARY);
     },
   }
 }

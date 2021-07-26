@@ -34,6 +34,7 @@ export default class User {
             const id = RequestMapperUtilities.getId(event);
             const account = PayloadValidator.validateAccount(JSON.parse(event.body));
             const accounts = await AccountsTable.getAccounts(id);
+
             const accountId = await AccountsTable.addAccount(
                 id,
                 accounts.accounts,

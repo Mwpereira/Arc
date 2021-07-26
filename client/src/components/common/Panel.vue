@@ -12,7 +12,7 @@ import Information from "@/components/dashboard/Information";
 import User from "@/components/settings/User";
 import Accounts from "@/components/accounts/Accounts";
 import AccountsSummary from "@/components/dashboard/AccountsSummary";
-import About from "@/components/about/About";
+import About from "@/views/About";
 
 export default {
   name: "Panel",
@@ -20,7 +20,8 @@ export default {
   computed: {
     panel() {
       return this.$store.getters.panel;
-    }
+    },
+
   },
 }
 </script>

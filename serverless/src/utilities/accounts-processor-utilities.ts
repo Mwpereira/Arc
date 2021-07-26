@@ -52,10 +52,10 @@ export default class AccountsTable {
             id,
             account
         );
-        if (account) {
-            account[`${mappedObject.id}`] = mappedObject;
+        if (accounts) {
+            accounts[`${mappedObject.id}`] = mappedObject;
         } else {
-            account = {[mappedObject.id]: mappedObject};
+            accounts = {[mappedObject.id]: mappedObject};
         }
         return arcTable
             .update({

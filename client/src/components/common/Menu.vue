@@ -15,28 +15,35 @@
   </div>
 </template>
 <script>
-
 import {Panel} from "@/enums/panel";
 
 export default {
   name: "Menu",
   methods: {
     about() {
+      this.$router.push('/about');
       this.$store.commit('setPanel', Panel.ABOUT);
     },
     accounts() {
+      this.$router.push('/accounts');
       this.$store.commit('setPanel', Panel.ACCOUNTS);
     },
     addAccount() {
+      this.$router.push('/accounts/addAccount');
       this.$store.commit('setPanel', Panel.ADD_ACCOUNT);
     },
+    same() {
+
+    },
     exit() {
+      this.$router.push('/dashboard');
       this.$store.dispatch("setPanel", Panel.INFORMATION);
     },
     async logout() {
       await this.$store.dispatch('logout');
     },
     settings() {
+      this.$router.push('/settings');
       this.$store.commit('setPanel', 'User');
     }
   }

@@ -1,7 +1,7 @@
 export enum Panel {
     ABOUT = ('About'),
     ACCOUNT = ('Account'),
-    ACCOUNT_SUMMARY = ('AccountSummary'),
+    ACCOUNTS_SUMMARY = ('AccountsSummary'),
     ACCOUNTS = ('Accounts'),
     ADD_ACCOUNT = ('AddAccount'),
     EDIT_ACCOUNT = ('EditAccount'),
