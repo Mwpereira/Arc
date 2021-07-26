@@ -144,6 +144,7 @@ export default {
     async updateAccount() {
       BuefyService.startLoading();
       if (await this.$store.dispatch("updateAccount", this.account)) {
+        await this.$router.push('/accounts/viewAccount')
         await this.$store.dispatch('setAccount', this.account.id);
         await this.$store.dispatch('setPanel', Panel.ACCOUNT);
       }
