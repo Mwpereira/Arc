@@ -75,6 +75,7 @@ export default {
       BuefyService.startLoading();
 
       if (await this.$store.dispatch("deleteAccount", this.account)) {
+        this.$store.commit('setAccount', '');
         this.exit();
       }
 
@@ -92,7 +93,7 @@ export default {
   created() {
     document.title = 'Account - Arc';
 
-    if (this.$store.getters.accountName === null) {
+    if (this.$store.getters.accountName === '') {
       this.$router.push('/accounts');
       this.$store.dispatch("setPanel", Panel.ACCOUNTS);
     }

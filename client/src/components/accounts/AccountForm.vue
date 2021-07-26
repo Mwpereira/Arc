@@ -159,7 +159,7 @@ export default {
     }
   },
   mounted() {
-    if (this.$store.getters.panel === Panel.EDIT_ACCOUNT && this.$store.getters.accountName !== null) {
+    if (this.$store.getters.panel === Panel.EDIT_ACCOUNT && this.$store.getters.accountName !== '') {
       this.loadAccount();
     }
   }
