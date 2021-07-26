@@ -159,12 +159,8 @@ export default {
     }
   },
   mounted() {
-    if (this.$store.getters.panel === Panel.EDIT_ACCOUNT) {
+    if (this.$store.getters.panel === Panel.EDIT_ACCOUNT && this.$store.getters.accountName !== null) {
       this.loadAccount();
-    }
-    if (this.$store.getters.accountName === null) {
-      this.$router.push('/accounts');
-      this.$store.dispatch("setPanel", Panel.ACCOUNTS);
     }
   }
 };

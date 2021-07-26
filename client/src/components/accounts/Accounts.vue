@@ -77,6 +77,7 @@ export default {
   },
   methods: {
     addAccount() {
+      this.$router.push('/accounts/addAccount');
       this.$store.dispatch('setPanel', Panel.ADD_ACCOUNT);
     },
     loadAccount(account) {
@@ -102,4 +103,5 @@ export default {
   background-color: #3c5688 !important;
   cursor: pointer;
 }
+
 </style>
