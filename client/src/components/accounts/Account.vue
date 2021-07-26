@@ -75,20 +75,28 @@ export default {
       BuefyService.startLoading();
 
       if (await this.$store.dispatch("deleteAccount", this.account)) {
+        await this.$store.dispatch('setAccount', null);
         this.exit();
       }
 
       BuefyService.stopLoading();
     },
     editAccount() {
+      this.$router.push('/accounts/editAccount');
       this.$store.dispatch("setPanel", Panel.EDIT_ACCOUNT);
     },
     exit() {
+      this.$router.push('/accounts');
       this.$store.dispatch("setPanel", Panel.ACCOUNTS);
     },
   },
   created() {
     document.title = 'Account - Arc';
+
+    if (this.$store.getters.accountName === null) {
+      this.$router.push('/accounts');
+      this.$store.dispatch("setPanel", Panel.ACCOUNTS);
+    }
   }
 };
 </script>

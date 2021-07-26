@@ -36,8 +36,14 @@ export default {
         case '/accounts':
           this.$store.dispatch('setPanel', Panel.ACCOUNTS)
           break;
+        case '/accounts/editAccount':
+          this.$store.dispatch('setPanel', Panel.EDIT_ACCOUNT)
+          break;
         case '/accounts/addAccount':
           this.$store.dispatch('setPanel', Panel.ADD_ACCOUNT)
+          break;
+        case '/accounts/viewAccount':
+          this.$store.dispatch('setPanel', Panel.ACCOUNT)
           break;
         case '/settings':
           this.$store.dispatch('setPanel', Panel.USER)
@@ -60,8 +66,14 @@ export default {
       case '/accounts':
         this.$store.dispatch('setPanel', Panel.ACCOUNTS)
         break;
+      case '/accounts/editAccount':
+        this.$store.dispatch('setPanel', Panel.EDIT_ACCOUNT)
+        break;
       case '/accounts/addAccount':
         this.$store.dispatch('setPanel', Panel.ADD_ACCOUNT)
+        break;
+      case '/accounts/viewAccount':
+        this.$store.dispatch('setPanel', Panel.ACCOUNT)
         break;
       case '/settings':
         this.$store.dispatch('setPanel', Panel.USER)

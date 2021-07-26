@@ -80,6 +80,7 @@ export default {
       this.$store.dispatch('setPanel', Panel.ADD_ACCOUNT);
     },
     loadAccount(account) {
+      this.$router.push('/accounts/viewAccount');
       this.$store.dispatch('setAccount', account);
       this.$store.dispatch('setPanel', Panel.ACCOUNT);
     },

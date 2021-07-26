@@ -27,7 +27,7 @@ const routes: RouteConfig[] = [
     {
         path: '/dashboard',
         alias: ['/dashboard/accountsSummary', '/about', '/settings', '/accounts', '/accounts/addAccount',
-            '/accounts/account', '/accounts/editAccount'],
+            '/accounts/account', '/accounts/editAccount', '/accounts/viewAccount'],
         name: 'Dashboard',
         component: Dashboard,
     },

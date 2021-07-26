@@ -159,6 +159,10 @@ export default {
     if (this.$store.getters.panel === Panel.EDIT_ACCOUNT) {
       this.loadAccount();
     }
+    if (this.$store.getters.accountName === null) {
+      this.$router.push('/accounts');
+      this.$store.dispatch("setPanel", Panel.ACCOUNTS);
+    }
   }
 };
 </script>
