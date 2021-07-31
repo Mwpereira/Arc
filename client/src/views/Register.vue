@@ -75,7 +75,7 @@
         </div>
         <footer class="card-footer">
           <p class="card-footer-item has-text-centered">
-            <span> Existing User? <a v-on:click="pageSwitch('login')">Login!</a> </span>
+            <span> Existing User? <a href="https://arc.mwpereira.ca/login" rel="noopener">Login!</a> </span>
           </p>
           <p class="card-footer-item has-text-centered">
                         <span>

@@ -103,7 +103,7 @@ export default {
   created() {
     document.title = 'Account - Arc';
 
-    if (this.$store.getters.accountName === '') {
+    if (this.$store.getters.accountName === '' || this.$store.getters.accountName === null) {
       this.$router.push('/accounts');
       this.$store.dispatch("setPanel", Panel.ACCOUNTS);
     }

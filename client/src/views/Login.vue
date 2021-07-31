@@ -60,7 +60,7 @@
         <footer class="card-footer">
           <p class="card-footer-item has-text-centered">
             <span>
-              New? <a v-on:click="pageSwitch('register')">Sign Up!</a>
+              New? <a href="https://arc.mwpereira.ca/register" rel="noopener">Sign Up!</a>
             </span>
           </p>
           <p class="card-footer-item has-text-centered">
