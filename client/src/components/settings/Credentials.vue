@@ -79,7 +79,7 @@ export default {
   methods: {
     confirmationDeleteUser() {
       this.$buefy.dialog.confirm({
-        title: 'Deleting account',
+        title: 'Deleting User',
         message: 'Are you sure you want to <b>delete</b> your account? This action cannot be undone.',
         confirmText: 'Delete Account',
         type: 'is-danger',
