@@ -45,7 +45,7 @@
               <h2 class="is-size-3 has-text-centered">Last Login</h2>
             </div>
             <div class="content">
-              <p><b>Date:&nbsp</b>{{ lastLogin }}</p>
+              <p><b>Date:&nbsp</b>{{ lastLogin }}&nbspUTC</p>
             </div>
           </div>
         </div>
