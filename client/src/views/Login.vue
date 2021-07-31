@@ -48,7 +48,7 @@
                 <button
                     :disabled="invalid"
                     auto-id="button-login"
-                    class="button is-block is-fullwidth is-primary is-medium"
+                    class="button is-block is-fullwidth is-primary is-medium mt-4"
                     type="submit"
                 >
                   Login
@@ -60,7 +60,7 @@
         <footer class="card-footer">
           <p class="card-footer-item has-text-centered">
             <span>
-              New? <a href="https://arc.mwpereira.ca/register" rel="noopener">Sign Up!</a>
+              New? <a v-on:click="pageSwitch('register')" rel="noopener">Sign Up!</a>
             </span>
           </p>
           <p class="card-footer-item has-text-centered">

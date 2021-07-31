@@ -59,7 +59,7 @@
                     rules="required|confirmed:password"
                     type="password"
                 />
-                <div class="buttons">
+                <div class="buttons mt-4">
                   <button
                       :disabled="invalid"
                       auto-id="button-register"
@@ -75,7 +75,7 @@
         </div>
         <footer class="card-footer">
           <p class="card-footer-item has-text-centered">
-            <span> Existing User? <a href="https://arc.mwpereira.ca/login" rel="noopener">Login!</a> </span>
+            <span> Existing User? <a v-on:click="pageSwitch('login')" rel="noopener">Login!</a></span>
           </p>
           <p class="card-footer-item has-text-centered">
                         <span>

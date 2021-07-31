@@ -17,10 +17,10 @@
             <h3 auto-id="header-card-arc" class="is-size-4 has-text-centered">Secure, Advanced, & Customizable</h3>
           </div>
           <div class="content buttons">
-            <b-button auto-id="button-login" class="button is-block is-fullwidth is-info is-medium"
+            <b-button auto-id="button-login" class="button is-block is-fullwidth is-primary is-medium mb-1"
                       v-on:click="pageSwitch('login')">Login
             </b-button>
-            <b-button auto-id="button-register" class="button is-block is-fullwidth is-info is-medium"
+            <b-button auto-id="button-register" class="button is-block is-fullwidth is-primary is-medium"
                       v-on:click="pageSwitch('register')">Sign
               Up
             </b-button>
@@ -56,6 +56,10 @@ export default {
   },
   created(){
     document.title = 'Arc';
+
+    if (this.$route.path !== '/') {
+      this.$router.push('/')
+    }
   }
 };
 </script>
