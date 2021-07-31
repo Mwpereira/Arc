@@ -11,7 +11,11 @@ $content-heading-color: white;
   background-color: #e2ba31 !important;
 }
 
-.button {
+.button.is-warning, .button.is-primary, .button.is-danger {
+  color: white !important;
+}
+
+.arc-button {
   color: white !important;
 }
 

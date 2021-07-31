@@ -43,7 +43,7 @@
               <button
                   auto-id="button-delete"
                   class="button is-block is-fullwidth is-danger is-medium"
-                  @click="deleteUser()"
+                  @click="confirmationDeleteUser()"
               >
                 Delete User Permanently
               </button>
@@ -77,6 +77,16 @@ export default {
     }
   },
   methods: {
+    confirmationDeleteUser() {
+      this.$buefy.dialog.confirm({
+        title: 'Deleting account',
+        message: 'Are you sure you want to <b>delete</b> your account? This action cannot be undone.',
+        confirmText: 'Delete Account',
+        type: 'is-danger',
+        hasIcon: true,
+        onConfirm: async () => await this.deleteUser()
+      })
+    },
     async deleteUser() {
       BuefyService.startLoading();
       if (await this.$store.dispatch("deleteUser")) {
@@ -106,5 +116,9 @@ export default {
 <style scoped>
 .card {
   min-height: 438px !important;
+}
+
+.button {
+  color: #363636 !important;
 }
 </style>
