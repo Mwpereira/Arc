@@ -56,6 +56,7 @@ serverless offline
 -   _Buefy_ - for using UI components for Vue.js based on Bulma
 -   _ChartJS_ - for creating and presenting data in a modern chart
 -   _axios_ - for the promise based HTTP client to handle requests
+-   _LottieFiles_ - for animated illustrations
 
 ## 🧪 Testing
 
