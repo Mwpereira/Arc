@@ -29,11 +29,11 @@
             <div class="column">
               <lottie-player alt="Servers" autoplay background="transparent"
                              class="lottie" loop speed="1"
-                             src="https://assets4.lottiefiles.com/packages/lf20_Hpmbys.json"
-                             style="width: 500px; height: 500px;"></lottie-player>
+                             src="https://assets7.lottiefiles.com/packages/lf20_z3pnisgt.json"
+                             style="width: 650px; height: 650px;"></lottie-player>
             </div>
             <div class="column">
-              <div class="section mx-6 mb-6">
+              <div class="section mx-6 mb-6 px-6">
                 <p class="subtitle is-size-1 has-text-white mb-6">
                   <arc>Password Manager</arc>
                 </p>
@@ -52,13 +52,13 @@
       <div id="security" class="section my-6">
         <div class="columns is-centered">
           <div class="column">
-            <div class="section mx-6 mb-6">
+            <div class="section mx-6 mb-6 px-6">
               <p class="title is-size-1 has-text-white my-6">
                 <arc>Security</arc>
               </p>
               <p class="is-size-4">We use <b class="arc-hl">AWS Serverless</b> including Cloudfront, API Gateway, Lambda
                 Edge Functions and DynamoDB to deliver the best industry standards.
-                <br/><br/>Hashing includes <b class="arc-hl">HSA256</b> along with a complex algorithm and a large salt
+                <br/><br/>Hashing includes <b class="arc-hl">HS256</b> along with a complex algorithm and a large salt
                 level to provide the best protection possible.</p>
             </div>
           </div>
@@ -71,21 +71,21 @@
       </div>
       <footer class="py-6 has-text-centered">
         <a href="https://ko-fi.com/michaelpereira" rel="noopener" target="_blank">
-          <b-button class="is-primary has-text-weight-bold m-2">
+          <b-button class="is-dark has-text-weight-bold m-2">
           <span>
             <i class="fas fa-coffee"></i>
           </span>
           </b-button>
         </a>
         <a href="https://github.com/mwpereira/" rel="noopener" target="_blank">
-          <b-button class="is-primary has-text-weight-bold m-2 has-text-white">
+          <b-button class="is-dark has-text-weight-bold m-2 has-text-white">
           <span>
             <i class="fab fa-github"></i>
           </span>
           </b-button>
         </a>
         <a href="https://www.linkedin.com/in/michael-pereira-07/" rel="noopener" target="_blank">
-          <b-button class="is-primary has-text-weight-bold m-2 has-text-white">
+          <b-button class="is-dark has-text-weight-bold m-2 has-text-white">
           <span>
             <i class="fab fa-linkedin-in"></i>
           </span>
@@ -156,7 +156,7 @@ arc {
     box-shadow: 0 8px 2px -2px #F28939;
   }
   to {
-    box-shadow: 0 8px 2px -2px #ff6a41;
+    box-shadow: 0 8px 2px -2px #f7532f;
   }
 }
 </style>

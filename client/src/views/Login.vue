@@ -136,8 +136,11 @@ html #login {
   background-size: cover;
 }
 
-template {
-  background-color: #ffffff !important;
+html > div {
+  background-color: rgba(28, 51, 92, 0.8) !important;
+  height: 100vh;
+  width: 100vh;
+  position: absolute;
 }
 
 #login {
