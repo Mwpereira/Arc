@@ -129,6 +129,15 @@ export default {
 </script>
 
 <style scoped>
+html #register {
+  height: 100vh;
+  background-image: url('../assets/img/background.webp');
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+
 #register {
   height: 100vh;
   align-items: center;

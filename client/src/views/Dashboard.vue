@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="dashboard">
     <div class="columns is-mobile">
       <div id="dashboardLeftPanel" class="column is-2">
         <LeftPanel/>
@@ -100,6 +100,14 @@ export default {
 </script>
 
 <style scoped>
+html #dashboard {
+  height: 100vh;
+  background-image: url('../assets/img/background.webp');
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
 template {
   background-color: #132241 !important;
 }

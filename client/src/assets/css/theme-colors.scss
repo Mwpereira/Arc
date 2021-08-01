@@ -29,13 +29,13 @@ $content-heading-color: white;
 }
 
 a.navbar-item:hover, .navbar-link:hover {
-  background-color: #3c5688 !important;
+  background-color: #284070 !important;
   color: white !important;
 }
 
 @media screen and (min-width: 1024px) {
   a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active {
-    background-color: #3c5688 !important;
+    background-color: #284070 !important;
     color: white !important;
   }
 }
@@ -51,7 +51,7 @@ a.navbar-item:hover, .navbar-link:hover {
 
 // Accounts Menu
 .menu-list a:hover, .menu-list a.is-active {
-  background-color: #3c5688 !important;
+  background-color: #284070 !important;
 }
 
 ul li a span {
