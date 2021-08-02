@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <NavBar/>
-    <div class="has-text-white mt-5">
+    <div class="has-text-white">
       <div id="hero">
         <div class="columns has-text-centered is-centered is-multiline">
           <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
