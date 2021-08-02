@@ -100,7 +100,7 @@ export default {
 
 <style scoped>
 .card:hover {
-  background-color: #3c5688 !important;
+  background-color: #284070 !important;
   cursor: pointer;
 }
 
