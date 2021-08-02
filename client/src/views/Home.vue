@@ -3,8 +3,8 @@
     <NavBar/>
     <div class="has-text-white mt-5">
       <div id="hero">
-        <div class="columns has-text-centered is-centered">
-          <div class="column">
+        <div class="columns has-text-centered is-centered is-multiline">
+          <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
             <img
                 alt="Arc Logo"
                 auto-id="img-logo"
@@ -14,25 +14,25 @@
                 width="400"
             />
             <p class="has-text-white is-size-4 is-italic mt-5">Ultimate Protection, Reliable Service</p>
-            <p class="is-size-3 mt-6 has-text-weight-bold">Get started with Arc for <b class="arc-hl"><i>free</i></b>
+            <p class="is-size-3 mt-6 has-text-weight-bold my-6">Get started with Arc for <b class="arc-hl"><i>free</i></b>
               today!</p>
           </div>
           <div class="column">
             <lottie-player alt="Passwords List" autoplay background="transparent"
                            class="lottie" loop speed="1"
                            src="https://assets1.lottiefiles.com/packages/lf20_zhmxgdpy.json"
-                           style="width: 700px; height: 700px;"></lottie-player>
+                           style="width: 650px; height: 650px;"></lottie-player>
           </div>
         </div>
         <div id="password-manager" class="section my-6">
-          <div class="columns is-centered">
+          <div class="columns is-centered is-multiline">
             <div class="column">
               <lottie-player alt="Servers" autoplay background="transparent"
                              class="lottie" loop speed="1"
                              src="https://assets7.lottiefiles.com/packages/lf20_z3pnisgt.json"
                              style="width: 650px; height: 650px;"></lottie-player>
             </div>
-            <div class="column">
+            <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
               <div class="section mx-6 mb-6 px-6">
                 <p class="subtitle is-size-1 has-text-white mb-6">
                   <arc>Password Manager</arc>
@@ -50,10 +50,10 @@
         </div>
       </div>
       <div id="security" class="section my-6">
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="section mx-6 mb-6 px-6">
-              <p class="title is-size-1 has-text-white my-6">
+        <div class="columns is-centered is-multiline">
+          <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
+            <div class="section mx-6 mb-6">
+              <p class="title is-size-1 has-text-white mb-6">
                 <arc>Security</arc>
               </p>
               <p class="is-size-4">We use <b class="arc-hl">AWS Serverless</b> including Cloudfront, API Gateway, Lambda
@@ -92,7 +92,7 @@
           </b-button>
         </a>
         <p class="is-size-6 is-italic my-5">Created By: Michael W. Pereira</p>
-        <div class="container has-text-weight-bold is-size-7">
+        <div class="container has-text-weight-bold is-size-7 mt-6 mb-3">
           <p>2021 © Arc. All rights reserved.</p>
         </div>
       </footer>
@@ -123,8 +123,7 @@ export default {
 
 <style>
 html #home {
-  background-image: none;
-  background-color: #192d52;
+  background: rgba(28, 51, 92, 0.98) none;
 }
 
 footer {
@@ -153,10 +152,24 @@ arc {
 
 @-webkit-keyframes glow {
   from {
-    box-shadow: 0 8px 2px -2px #F28939;
+    box-shadow: 0 8px 2px -2px #f2bb39;
   }
   to {
-    box-shadow: 0 8px 2px -2px #f7532f;
+    box-shadow: 0 8px 2px -2px #c41919;
+  }
+}
+
+@media screen and (max-width: 1408px) {
+  .lottie {
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+@media screen and (max-width: 1216px) {
+  .lottie {
+    width: 500px !important;
+    height: 500px !important;
   }
 }
 </style>

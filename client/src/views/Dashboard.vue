@@ -82,6 +82,10 @@ export default {
         this.$store.commit('setPanel', Panel.ABOUT);
         break;
     }
+    if (localStorage.getItem("readWelcomeNotification") !== "true") {
+      localStorage.setItem("readWelcomeNotification", "true");
+      this.welcomeAlert();
+    }
     this.$store.dispatch('refreshToken').then((validAccessToken) => {
       if (!validAccessToken) {
         this.$store.dispatch('logout');
@@ -92,9 +96,13 @@ export default {
     });
   },
   methods: {
-    routerUpdate() {
-
-    }
+    welcomeAlert() {
+      this.$buefy.dialog.alert({
+        title: 'Welcome!',
+        message: 'Thank you for trying out <b>Arc</b>! <br/>I hope you enjoy :)',
+        confirmText: 'Continue'
+      })
+    },
   }
 }
 </script>

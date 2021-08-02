@@ -60,7 +60,7 @@
         <footer class="card-footer">
           <p class="card-footer-item has-text-centered">
             <span>
-              New? <a v-on:click="pageSwitch('register')" rel="noopener">Sign Up!</a>
+              New? <a rel="noopener" v-on:click="pageSwitch('register')">Sign Up!</a>
             </span>
           </p>
           <p class="card-footer-item has-text-centered">
@@ -72,6 +72,9 @@
         </footer>
       </div>
     </div>
+    <span id="homeBtn" class="is-size-4 px-4" v-on:click="pageSwitch('')">
+      <i class="fas fa-home"></i>
+    </span>
   </div>
 </template>
 
@@ -129,11 +132,7 @@ export default {
 
 <style scoped>
 html #login {
-  height: 100vh;
-  background-image: url('../assets/img/background.webp');
-  background-position: top;
-  background-repeat: repeat;
-  background-size: cover;
+  background: rgba(28, 51, 92, 0.65) none;
 }
 
 html > div {
@@ -146,6 +145,19 @@ html > div {
 #login {
   height: 100vh;
   align-items: center;
+}
+
+#homeBtn {
+  padding: 10px;
+  background-color: #192d52;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#homeBtn:hover {
+  cursor: pointer;
 }
 
 .b-checkbox.checkbox:hover {

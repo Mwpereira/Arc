@@ -67,7 +67,7 @@ export default {
         Gaming: "fas",
         Automotive: "fas",
         Family: "fas"
-      }
+      },
     }
   },
   computed: {

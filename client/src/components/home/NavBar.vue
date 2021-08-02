@@ -25,4 +25,12 @@
 .navbar-item {
   font-weight: bold;
 }
+
+div.navbar-menu {
+  background-color: transparent !important;
+}
+
+.burger {
+  color: white !important;
+}
 </style>
