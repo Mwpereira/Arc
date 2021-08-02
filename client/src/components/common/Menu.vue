@@ -12,7 +12,8 @@
                    @click="addAccount()"></b-menu-item>
       <b-menu-item auto-id="navigation-user-settings" icon="user" icon-pack="fas" label="User Settings"
                    @click="settings()"></b-menu-item>
-      <b-menu-item auto-id="navigation-about" icon="info-circle" icon-pack="fas" label="About"></b-menu-item>
+      <b-menu-item auto-id="navigation-about" icon="info-circle" icon-pack="fas" label="About"
+                   @click="about()"></b-menu-item>
       <b-menu-item auto-id="navigation-logout" icon="sign-out-alt" icon-pack="fas" label="Logout"
                    @click="logout()"></b-menu-item>
     </b-menu-list>
