@@ -137,6 +137,7 @@ footer {
 .lottie {
   display: block;
   margin: auto;
+  max-width: 650px;
 }
 
 #home {
