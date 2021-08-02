@@ -24,7 +24,7 @@
             <lottie-player alt="Passwords List" autoplay background="transparent"
                            class="lottie" loop speed="1"
                            src="https://assets1.lottiefiles.com/packages/lf20_zhmxgdpy.json"
-                           style="width: 650px; height: 650px;"></lottie-player>
+                           style="width: 650px; height: 650px; margin: 50px;"></lottie-player>
           </div>
         </div>
         <div id="password-manager" class="section my-6">
