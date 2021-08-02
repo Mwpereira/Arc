@@ -158,6 +158,7 @@ html > div {
 
 #homeBtn:hover {
   cursor: pointer;
+  background-color: #284070;
 }
 
 .b-checkbox.checkbox:hover {

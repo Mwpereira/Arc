@@ -153,6 +153,7 @@ html #register {
 
 #homeBtn:hover {
   cursor: pointer;
+  background-color: #284070;
 }
 
 </style>
