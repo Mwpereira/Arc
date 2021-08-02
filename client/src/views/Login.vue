@@ -164,4 +164,11 @@ html > div {
 .b-checkbox.checkbox:hover {
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  #homeBtn {
+    position: relative;
+    left: 2.5vw;
+  }
+}
 </style>

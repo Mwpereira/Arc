@@ -156,4 +156,10 @@ html #register {
   background-color: #284070;
 }
 
+@media screen and (max-width: 768px) {
+  #homeBtn {
+    position: relative;
+    left: 2.5vw;
+  }
+}
 </style>

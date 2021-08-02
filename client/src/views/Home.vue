@@ -6,6 +6,7 @@
         <div class="columns has-text-centered is-centered is-multiline">
           <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
             <img
+                id="logo"
                 alt="Arc Logo"
                 auto-id="img-logo"
                 class="mt-6 pt-6"
@@ -13,8 +14,9 @@
                 webp-fallback=".png"
                 width="400"
             />
-            <p class="has-text-white is-size-4 is-italic mt-5">Ultimate Protection, Reliable Service</p>
-            <p class="is-size-3 mt-6 has-text-weight-bold my-6">Get started with Arc for <b
+            <p class="has-text-white is-size-4 is-size-6-mobile is-italic mt-5">Ultimate Protection, Reliable
+              Service</p>
+            <p class="is-size-3 is-size-5-mobile mt-6 has-text-weight-bold my-6">Get started with Arc for <b
                 class="arc-hl"><i>free</i></b>
               today!</p>
           </div>
@@ -34,8 +36,8 @@
                              style="width: 650px; height: 650px;"></lottie-player>
             </div>
             <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
-              <div class="section mx-6 mb-6">
-                <p class="subtitle is-size-1 has-text-white mb-6">
+              <div class="section data-section mx-6 mb-6">
+                <p class="subtitle is-size-1 is-size-2-mobile has-text-white mb-6">
                   <arc>Password Manager</arc>
                 </p>
                 <p class="is-size-4">Use Arc to store <b class="arc-hl">unlimited</b> passwords to help you keep
@@ -53,8 +55,8 @@
       <div id="security" class="section my-6">
         <div class="columns is-centered is-multiline">
           <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
-            <div class="section mx-6 mb-6">
-              <p class="title is-size-1 has-text-white mb-6">
+            <div class="section data-section mx-6 mb-6">
+              <p class="title is-size-1 is-size-2-mobile has-text-white mb-6">
                 <arc>Security</arc>
               </p>
               <p class="is-size-4">We use <b class="arc-hl">AWS Serverless</b> including Cloudfront, API Gateway, Lambda
@@ -125,6 +127,7 @@ export default {
 <style>
 html #home {
   background: rgba(28, 51, 92, 0.98) none;
+  overflow-x: hidden;
 }
 
 footer {
@@ -139,6 +142,14 @@ footer {
   display: block;
   margin: auto;
   max-width: 650px;
+}
+
+.navbar-burger.burger {
+  color: white !important;
+}
+
+.navbar-menu {
+  background-color: transparent !important;
 }
 
 #home {
@@ -172,6 +183,31 @@ arc {
   .lottie {
     width: 500px !important;
     height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .data-section {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .lottie {
+    width: 300px !important;
+    height: 300px !important;
+    margin-top: 30px;
+  }
+
+  #logo {
+    width: 325px;
+  }
+
+  img.mt-6 {
+    margin-top: 0 !important;
+  }
+
+  .data-section.mx-6 {
+    margin: 0 !important;
   }
 }
 </style>
