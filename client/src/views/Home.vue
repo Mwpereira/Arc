@@ -14,7 +14,8 @@
                 width="400"
             />
             <p class="has-text-white is-size-4 is-italic mt-5">Ultimate Protection, Reliable Service</p>
-            <p class="is-size-3 mt-6 has-text-weight-bold my-6">Get started with Arc for <b class="arc-hl"><i>free</i></b>
+            <p class="is-size-3 mt-6 has-text-weight-bold my-6">Get started with Arc for <b
+                class="arc-hl"><i>free</i></b>
               today!</p>
           </div>
           <div class="column">
@@ -43,7 +44,7 @@
                   <br/><br/> Our modern design brings elegance and ease when using our application. We hope to achieve
                   and
                   excel
-                  passed a high standard of quality and provide excellent service.</p>
+                  pass a high standard of quality and provide excellent service.</p>
               </div>
             </div>
           </div>
