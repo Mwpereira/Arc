@@ -43,7 +43,7 @@
                   <br/><br/> Our modern design brings elegance and ease when using our application. We hope to achieve
                   and
                   excel
-                  passed a high stand of quality and provide excellent service.</p>
+                  passed a high standard of quality and provide excellent service.</p>
               </div>
             </div>
           </div>
