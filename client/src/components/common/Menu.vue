@@ -4,13 +4,17 @@
       <img alt="Arc" src="../../assets/logo.webp" style="max-width: 150px" webp-fallback=".png"/>
     </figure>
     <b-menu-list>
-      <b-menu-item auto-id="navigation-dashboard" icon="home" label="Dashboard" @click="exit()"></b-menu-item>
-      <b-menu-item auto-id="navigation-accounts" icon="database" label="Accounts" @click="accounts()"></b-menu-item>
-      <b-menu-item auto-id="navigation-add-account" icon="plus" label="Add Account" @click="addAccount()"></b-menu-item>
-      <b-menu-item auto-id="navigation-user-settings" icon="account" label="User Settings"
+      <b-menu-item auto-id="navigation-dashboard" icon="home" icon-pack="fas" label="Dashboard"
+                   @click="exit()"></b-menu-item>
+      <b-menu-item auto-id="navigation-accounts" icon="database" icon-pack="fas" label="Accounts"
+                   @click="accounts()"></b-menu-item>
+      <b-menu-item auto-id="navigation-add-account" icon="plus" icon-pack="fas" label="Add Account"
+                   @click="addAccount()"></b-menu-item>
+      <b-menu-item auto-id="navigation-user-settings" icon="user" icon-pack="fas" label="User Settings"
                    @click="settings()"></b-menu-item>
-      <b-menu-item auto-id="navigation-about" icon="information-outline" label="About" @click="about()"></b-menu-item>
-      <b-menu-item auto-id="navigation-logout" icon="door" label="Logout" @click="logout()"></b-menu-item>
+      <b-menu-item auto-id="navigation-about" icon="info-circle" icon-pack="fas" label="About"></b-menu-item>
+      <b-menu-item auto-id="navigation-logout" icon="sign-out-alt" icon-pack="fas" label="Logout"
+                   @click="logout()"></b-menu-item>
     </b-menu-list>
   </div>
 </template>
@@ -50,8 +54,8 @@ export default {
 }
 </script>
 
-<style scoped>
-div {
-  background-color: #192d52;
+<style>
+li a .icon {
+  margin-right: 5px;
 }
 </style>
