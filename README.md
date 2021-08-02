@@ -1,6 +1,6 @@
 # 🔏 Arc
 
-A secure, advanced, and customizable password vault. Keep your accounts and data safe by storing your account information using AWS resources, with everything heavily encrypted from client to server. Never worry about forgetting account credentials ever again thanks to Arc. This cross-platform software makes accessibility easy across Windows, Linux, Mac OS, as well as web browser capability.
+A secure, advanced, and customizable password vault. Keep your accounts and data safe by storing your account information using AWS resources, with everything heavily encrypted from client to server. Never worry about forgetting account credentials ever again thanks to Arc. This cross-platform software makes accessibility easy across Windows, Linux, Mac OS, as well as web browser capability on your laptop/desktop.
 
 ## 📐 Project Setup
 
