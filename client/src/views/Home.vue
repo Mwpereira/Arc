@@ -34,7 +34,7 @@
                              style="width: 650px; height: 650px;"></lottie-player>
             </div>
             <div class="column is-12-mobile is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
-              <div class="section mx-6 mb-6 px-6">
+              <div class="section mx-6 mb-6">
                 <p class="subtitle is-size-1 has-text-white mb-6">
                   <arc>Password Manager</arc>
                 </p>
