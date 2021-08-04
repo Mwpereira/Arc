@@ -40,6 +40,7 @@ export const errorProcessor = async (
             break;
         }
         case 401: {
+            await checkInvalidTokenError();
             BuefyService.dangerToast(response.data.message);
             break;
         }
