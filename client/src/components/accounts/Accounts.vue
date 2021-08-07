@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div v-for="account in accounts" :key="account.accountName">
+      <div v-for="account in accounts" :key="account.accountName" class="column">
         <div class="card card-account m-5" @click="loadAccount(account.id)">
           <div :auto-id="account.id" class="card-content">
             <div class="level-item">
@@ -35,6 +35,14 @@
             <div class="content">
             </div>
           </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card card-account m-5">
+        </div>
+      </div>
+      <div class="column">
+        <div class="card card-account m-5">
         </div>
       </div>
     </div>
@@ -105,7 +113,6 @@ export default {
 }
 
 .card {
-  width: auto !important;
   max-width: 450px !important;
 }
 </style>
