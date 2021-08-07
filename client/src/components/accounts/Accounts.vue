@@ -2,8 +2,8 @@
   <section>
     <h2 auto-id="header-panel" class="is-size-3 mb-5">Accounts</h2>
     <div class="columns is-multiline is-center is-vcentered has-text-centered">
-      <div v-if="accounts === null" class="column">
-        <div class="card card-fixed m-5" @click="addAccount()">
+      <div v-if="accounts === null">
+        <div class="card card-account m-5" @click="addAccount()">
           <div class="card-content">
             <div class="level-item">
               <b-icon
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div v-for="account in accounts" :key="account.accountName" class="column">
+      <div v-for="account in accounts" :key="account.accountName">
         <div class="card card-account m-5" @click="loadAccount(account.id)">
           <div :auto-id="account.id" class="card-content">
             <div class="level-item">
@@ -104,4 +104,8 @@ export default {
   cursor: pointer;
 }
 
+.card {
+  width: auto !important;
+  max-width: 450px !important;
+}
 </style>
