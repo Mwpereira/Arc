@@ -172,7 +172,7 @@ arc {
   }
 }
 
-@media screen and (max-width: 1408px) {
+@media screen and (max-width: 1550px) {
   .lottie {
     width: auto !important;
     height: auto !important;
