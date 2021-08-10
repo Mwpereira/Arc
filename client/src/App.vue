@@ -23,9 +23,6 @@ export default {
       showNotification: true
     };
   },
-  mounted() {
-    document.title = 'Arc';
-  },
   created() {
     if (localStorage.getItem("readCookiesNotfication") === "true") {
       this.showNotification = false;

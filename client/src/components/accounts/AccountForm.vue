@@ -135,7 +135,7 @@ export default {
         this.$store.dispatch('setPanel', Panel.ACCOUNT);
       } else {
         this.$router.push('/accounts');
-        this.$store.dispatch("clearPanel");
+        this.$store.dispatch('setPanel', Panel.ACCOUNTS);
       }
     },
     loadAccount() {
