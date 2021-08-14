@@ -40,7 +40,7 @@
                 <p class="subtitle is-size-1 is-size-2-mobile has-text-white mb-6">
                   <arc>Password Manager</arc>
                 </p>
-                <p class="is-size-4">Use Arc to store <b class="arc-hl">unlimited</b> passwords to help you keep
+                <p class="is-size-4">Use Arc to store <b class="arc-hl">unlimited passwords</b>  to help you keep
                   yourself
                   organized and safe.
                   <br/><br/> Our modern design brings elegance and ease when using our application. We hope to achieve
