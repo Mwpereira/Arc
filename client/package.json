@@ -64,8 +64,5 @@
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.6",
     "vue-template-compiler": "^2.6.12"
   },
-  "license": "ISC",
-  "engines": {
-    "node": ">=12.22.1"
-  }
+  "license": "ISC"
 }
