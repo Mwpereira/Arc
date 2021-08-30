@@ -1,0 +1,14 @@
+#IAM Role Statements
+
+- Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:Query
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
+      # Restrict our IAM role permissions to
+      # the specific table for the stage
+      Resource: "arn:aws:dynamodb:*:*:*"

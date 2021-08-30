@@ -3,39 +3,26 @@ service: arc
 frameworkVersion: '2'
 
 package:
-  individually: true
+    individually: true
 
 plugins:
-  - serverless-webpack
-  - serverless-offline
-  - serverless-dotenv-plugin # Load .env as environment variables
+    - serverless-webpack # Bundle serverless files when being deployed
+    - serverless-offline # Run serverless resources locally
+    - serverless-dotenv-plugin # Load .env as environment variables
 
 custom:
-  webpack:
-    webpackConfig: './webpack.config.js'
-    includeModules:
-      forceExclude:
-        -aws-sdk
+    webpack:
+        webpackConfig: './webpack.config.js'
+        includeModules:
+            forceExclude: -aws-sdk
 
 provider:
-  name: aws
-  runtime: nodejs12.x
-  stage: dev
-  region: us-east-1
+    name: aws
+    runtime: nodejs12.x
+    stage: dev
+    region: us-east-1
 
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - dynamodb:Scan
-        - dynamodb:Query
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-        - dynamodb:DescribeTable
-      # Restrict our IAM role permissions to
-      # the specific table for the stage
-      Resource: "arn:aws:dynamodb:*:*:*"
+    iamRoleStatements: ${file(serverless-configs/iamrolestatements.yml)}
 
 functions: ${file(serverless-configs/functions.yml)}
 resources: ${file(serverless-configs/resources.yml)}

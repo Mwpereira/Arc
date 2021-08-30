@@ -1,3 +1,5 @@
+#Functions
+
 verifyToken:
   handler: 'src/handlers/jwt-handler.verifyToken'
   description: "Verifies JWT"
