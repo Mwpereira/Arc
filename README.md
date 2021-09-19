@@ -22,7 +22,7 @@ Develop using a Desktop Application _(Recommended)_
 npm run electron:serve
 ```
 
-Develop using a Web Browser Build
+Develop using a web browser build
 
 ```
 npm run serve
@@ -30,7 +30,7 @@ npm run serve
 
 ### Server
 
-Running aws serverless locally
+Run aws serverless locally
 
 ```
 serverless offline
