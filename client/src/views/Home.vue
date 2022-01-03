@@ -23,7 +23,7 @@
           <div class="column">
             <lottie-player alt="Passwords List" autoplay background="transparent"
                            class="lottie" loop speed="1"
-                           src="https://assets1.lottiefiles.com/packages/lf20_zhmxgdpy.json"
+                           src="https://assets10.lottiefiles.com/packages/lf20_1idqu1ac.json"
                            style="width: 650px; height: 650px; margin: 50px;"></lottie-player>
           </div>
         </div>
